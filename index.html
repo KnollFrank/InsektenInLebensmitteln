@@ -1,1 +1,56 @@
-Hello World
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Insekten in Lebensmitteln</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="./InsektenInLebensmitteln.min.js"></script>
+    <script>
+        document.addEventListener(
+            'DOMContentLoaded',
+            event => {
+                fetch('data/products.json')
+                    .then(response => response.json())
+                    .then(products => products.filter(product => Utils.isValidUrl(product.image_url)))
+                    .then(products => {
+                        displayProducts(
+                            document.getElementById('products'),
+                            products.slice(0, products.length));
+                    })
+            });
+
+
+        function displayProducts(container, products) {
+            const productsView = new ProductsView(container, Config.showBarcodeInHeading);
+            productsView.displayProducts(products);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Diese Lebensmittel enthalten Insekten:</h1>
+    <div id="products"></div>
+    <a
+        href='https://play.google.com/store/apps/details?id=de.foodIngredientsScanner&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img
+            alt='Jetzt bei Google Play'
+            src='https://play.google.com/intl/en_us/badges/static/images/badges/de_badge_web_generic.png' /></a>
+
+    <template id="template-ProductCardView">
+        <div class="card" style="display: inline-block;">
+            <img class="product_image" loading="lazy" />
+            <div class="product_name"></div>
+            <div>
+                <span>Zutaten:</span>
+                <span class="unwantedIngredients"></span>
+            </div>
+            <div>
+                <span>Marken:</span>
+                <span class="brands"></span>
+            </div>
+        </div>
+    </template>
+</body>
+
+</html>
