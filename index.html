@@ -20,19 +20,43 @@
         document.addEventListener(
             'DOMContentLoaded',
             event => {
-                const productsViewActivity = new ProductsViewActivity(document.getElementById('products'));
+                const productsViewActivity =
+                    new ProductsViewActivity(
+                        {
+                            productsContainer: document.getElementById('products'),
+                            infotext: document.getElementById('infotext'),
+                            prevBtn: document.getElementById('prevBtn')
+                        }
+                    );
                 productsViewActivity.start();
             });
     </script>
 </head>
 
 <body>
-    <h1>Diese Lebensmittel enthalten Insekten:</h1>
-    <div id="products"></div>
-    <a
-        href='https://play.google.com/store/apps/details?id=de.foodIngredientsScanner&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img
-            alt='Jetzt bei Google Play'
-            src='https://play.google.com/intl/en_us/badges/static/images/badges/de_badge_web_generic.png' /></a>
+    <div class="rootContainer">
+        <div class="topnav">
+            <button id="prevBtn" class="tablink">
+                <img src="img/back-svgrepo-com.svg" />
+            </button>
+            <!-- FK-TODO: rename infotext to categoryText everywhere -->
+            <div id="infotext" class="tablink"></div>
+        </div>
+
+        <div class="body">
+            <div class="main">
+                <div class="pageContent">
+                    <h1>Diese Lebensmittel enthalten Insekten:</h1>
+                    <!-- FK-TODO: rename products to productsAndCategories. Dito accompanying variable names in js code -->
+                    <div id="products"></div>
+                    <a
+                        href='https://play.google.com/store/apps/details?id=de.foodIngredientsScanner&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img
+                            alt='Jetzt bei Google Play'
+                            src='https://play.google.com/intl/en_us/badges/static/images/badges/de_badge_web_generic.png' /></a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <template id="template-ProductCardView">
         <div class="card" style="display: inline-block;">
