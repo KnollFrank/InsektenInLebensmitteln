@@ -14,6 +14,9 @@
 
         gtag('config', 'G-WDZG766778');
     </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
     <script src="./InsektenInLebensmitteln.min.js"></script>
     <script>
@@ -24,8 +27,18 @@
                     new ProductsViewActivity(
                         {
                             productsContainer: document.getElementById('products'),
-                            infotext: document.getElementById('infotext'),
-                            prevBtn: document.getElementById('prevBtn')
+                            categoryText: document.getElementById('categoryText'),
+                            prevBtn: document.getElementById('prevBtn'),
+                            searchUI: {
+                                form: document.querySelector('#searchform'),
+                                input: document.querySelector('#searchInput'),
+                                productsContainer: document.getElementById('productsSearch')
+                            },
+                            overlay: {
+                                openButton: document.getElementById('openSearchButton'),
+                                closeButton: document.getElementById('closeSearchButton'),
+                                container: document.getElementById("searchOverlay")
+                            }
                         }
                     );
                 productsViewActivity.start();
@@ -39,8 +52,8 @@
             <button id="prevBtn" class="tablink">
                 <img src="img/back-svgrepo-com.svg" />
             </button>
-            <!-- FK-TODO: rename infotext to categoryText everywhere -->
-            <div id="infotext" class="tablink"></div>
+            <div id="categoryText" class="tablink"></div>
+            <button id="openSearchButton" class="openBtn"><i class="fa fa-search"></i></button>
         </div>
 
         <div class="body">
@@ -58,26 +71,46 @@
         </div>
     </div>
 
-    <template id="template-ProductCardView">
-        <div class="card" style="display: inline-block;">
-            <img class="product_image" loading="lazy" />
-            <div class="product_name"></div>
-            <div>
-                <span>Zutaten:</span>
-                <span class="unwantedIngredients"></span>
-            </div>
-            <div>
-                <span>Marken:</span>
-                <span class="brands"></span>
+    <div id="searchOverlay" class="overlay">
+        <span id="closeSearchButton" class="closebtn" title="Close Overlay">×</span>
+        <div class="overlay-content">
+            <div class="rootContainer">
+                <div class="body">
+                    <div class="main">
+                        <div class="pageContent">
+                            <div class="search-container">
+                                <form id="searchform">
+                                    <input type="text" id="searchInput" placeholder="Produkt oder Marke" name="search">
+                                    <button type="submit"><i class="fa fa-search"></i></button>
+                                </form>
+                            </div>
+                            <div id="productsSearch"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </template>
 
-    <template id="template-CategoryCardView">
-        <div class="card" style="display: inline-block;">
-            <div class="category_name"></div>
-        </div>
-    </template>
+        <template id="template-ProductCardView">
+            <div class="card" style="display: inline-block;">
+                <img class="product_image" loading="lazy" />
+                <div class="product_name"></div>
+                <div>
+                    <span>Zutaten:</span>
+                    <span class="unwantedIngredients"></span>
+                </div>
+                <div>
+                    <span>Marken:</span>
+                    <span class="brands"></span>
+                </div>
+            </div>
+        </template>
+
+        <template id="template-CategoryCardView">
+            <div class="card" style="display: inline-block;">
+                <div class="category_name"></div>
+            </div>
+        </template>
 </body>
 
 </html>

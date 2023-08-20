@@ -3,46 +3,34 @@
     "version": "1",
     "nodes": [
         {
-            "id": "en:candies"
-        },
-        {
             "id": "en:plant-based-foods"
-        },
-        {
-            "id": "en:desserts"
-        },
-        {
-            "id": "en:prepared-salads"
-        },
-        {
-            "id": "en:meals"
         },
         {
             "id": "en:sausages"
         },
         {
-            "id": "en:cakes"
+            "id": "en:meals"
         },
         {
-            "id": "en:beverages"
+            "id": "en:dairies"
         },
         {
             "id": "en:meats"
         },
         {
-            "id": "en:sweet-snacks"
-        },
-        {
-            "id": "en:cocoa-and-its-products"
-        },
-        {
-            "id": "en:confectioneries"
+            "id": "en:prepared-salads"
         },
         {
             "id": "en:eggs"
         },
         {
-            "id": "en:dairies"
+            "id": "en:desserts"
+        },
+        {
+            "id": "en:candies"
+        },
+        {
+            "id": "en:sweet-snacks"
         },
         {
             "id": "en:gummi-candies"
@@ -51,16 +39,28 @@
             "id": "en:bonbons"
         },
         {
+            "id": "en:confectioneries"
+        },
+        {
+            "id": "en:beverages"
+        },
+        {
             "id": "en:salami"
+        },
+        {
+            "id": "en:cakes"
+        },
+        {
+            "id": "en:cocoa-and-its-products"
         },
         {
             "id": "en:chocolate-covered-peanuts"
         },
         {
-            "id": "de:fleischsalat"
+            "id": "en:multi-coloured-vermicelli"
         },
         {
-            "id": "en:multi-coloured-vermicelli"
+            "id": "de:fleischsalat"
         },
         {
             "id": "Lebensmittel"
@@ -68,20 +68,20 @@
     ],
     "edges": [
         {
-            "source": "en:confectioneries",
-            "target": "en:candies"
+            "source": "en:candies",
+            "target": "en:gummi-candies"
         },
         {
-            "source": "en:sweet-snacks",
-            "target": "en:confectioneries"
+            "source": "en:confectioneries",
+            "target": "en:candies"
         },
         {
             "source": "en:meals",
             "target": "en:prepared-salads"
         },
         {
-            "source": "en:candies",
-            "target": "en:gummi-candies"
+            "source": "en:sweet-snacks",
+            "target": "en:confectioneries"
         },
         {
             "source": "Lebensmittel",
@@ -105,35 +105,19 @@
         },
         {
             "source": "Lebensmittel",
-            "target": "en:plant-based-foods"
-        },
-        {
-            "source": "en:sweet-snacks",
-            "target": "en:cakes"
-        },
-        {
-            "source": "Lebensmittel",
             "target": "en:meats"
-        },
-        {
-            "source": "Lebensmittel",
-            "target": "en:sausages"
-        },
-        {
-            "source": "en:confectioneries",
-            "target": "en:bonbons"
         },
         {
             "source": "en:cocoa-and-its-products",
             "target": "en:bonbons"
         },
         {
-            "source": "Lebensmittel",
-            "target": "en:sweet-snacks"
+            "source": "en:confectioneries",
+            "target": "en:bonbons"
         },
         {
             "source": "Lebensmittel",
-            "target": "en:salami"
+            "target": "en:eggs"
         },
         {
             "source": "en:bonbons",
@@ -141,15 +125,31 @@
         },
         {
             "source": "Lebensmittel",
-            "target": "en:eggs"
-        },
-        {
-            "source": "Lebensmittel",
             "target": "en:multi-coloured-vermicelli"
         },
         {
             "source": "Lebensmittel",
+            "target": "en:sausages"
+        },
+        {
+            "source": "Lebensmittel",
+            "target": "en:salami"
+        },
+        {
+            "source": "en:sweet-snacks",
+            "target": "en:cakes"
+        },
+        {
+            "source": "Lebensmittel",
+            "target": "en:plant-based-foods"
+        },
+        {
+            "source": "Lebensmittel",
             "target": "de:fleischsalat"
+        },
+        {
+            "source": "Lebensmittel",
+            "target": "en:sweet-snacks"
         }
     ]
 }

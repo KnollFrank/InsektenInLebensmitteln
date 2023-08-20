@@ -57,20 +57,6 @@
         ]
     },
     {
-        "barcode": "0033984013179",
-        "unwantedIngredients": [
-            "E 120"
-        ],
-        "categories_tags": [
-            "Lebensmittel"
-        ],
-        "product_name": "Glucosamine Hyaluronic Acid Chondroitin MSM",
-        "image_url": "https://images.openfoodfacts.org/images/products/003/398/401/3179/front_en.4.400.jpg",
-        "brands": [
-            "Solgar"
-        ]
-    },
-    {
         "barcode": "00510295",
         "unwantedIngredients": [
             "Karmin"
@@ -711,20 +697,6 @@
         "brands": [
             "Daflee Food GmbH",
             "Mister Choc"
-        ]
-    },
-    {
-        "barcode": "20449568",
-        "unwantedIngredients": [
-            "E904"
-        ],
-        "categories_tags": [
-            "en:plant-based-foods"
-        ],
-        "product_name": "Lemon",
-        "image_url": "https://images.openfoodfacts.org/images/products/20449568/front_en.61.400.jpg",
-        "brands": [
-            "Oaklands"
         ]
     },
     {
@@ -1432,20 +1404,6 @@
         "image_url": "https://images.openfoodfacts.org/images/products/309/271/861/3105/front_fr.6.400.jpg",
         "brands": [
             "Teisseire"
-        ]
-    },
-    {
-        "barcode": "3116740015536",
-        "unwantedIngredients": [
-            "E120"
-        ],
-        "categories_tags": [
-            "en:confectioneries"
-        ],
-        "product_name": "Tubble Gum Tutti Frutti",
-        "image_url": "https://images.openfoodfacts.org/images/products/311/674/001/5536/front_en.71.400.jpg",
-        "brands": [
-            "Lutti"
         ]
     },
     {
@@ -2274,20 +2232,6 @@
         ]
     },
     {
-        "barcode": "4001246011085",
-        "unwantedIngredients": [
-            "E 120"
-        ],
-        "categories_tags": [
-            "en:beverages"
-        ],
-        "product_name": "Nürburg Quelle",
-        "image_url": "https://images.openfoodfacts.org/images/products/400/124/601/1085/front_de.13.400.jpg",
-        "brands": [
-            "Nürburg Quelle"
-        ]
-    },
-    {
         "barcode": "4001473080502",
         "unwantedIngredients": [
             "E120"
@@ -2631,22 +2575,6 @@
         ],
         "product_name": "Yoginos",
         "image_url": "https://images.openfoodfacts.org/images/products/400/297/150/8109/front_en.5.400.jpg",
-        "brands": [
-            "Ehrmann"
-        ]
-    },
-    {
-        "barcode": "4002971666502",
-        "unwantedIngredients": [
-            "E120"
-        ],
-        "categories_tags": [
-            "Lebensmittel",
-            "en:dairies",
-            "en:desserts"
-        ],
-        "product_name": "Obstgarten Hüttenspaß à la Apfelstrudel",
-        "image_url": "https://images.openfoodfacts.org/images/products/400/297/166/6502/front_de.4.400.jpg",
         "brands": [
             "Ehrmann"
         ]
@@ -3627,20 +3555,6 @@
         ]
     },
     {
-        "barcode": "4009900465304",
-        "unwantedIngredients": [
-            "E120"
-        ],
-        "categories_tags": [
-            "en:candies"
-        ],
-        "product_name": "Crazy sours",
-        "image_url": "https://images.openfoodfacts.org/images/products/400/990/046/5304/front_en.32.400.jpg",
-        "brands": [
-            "Skittles"
-        ]
-    },
-    {
         "barcode": "4010130002269",
         "unwantedIngredients": [
             "Karmin",
@@ -3756,34 +3670,6 @@
         ]
     },
     {
-        "barcode": "4011100005846",
-        "unwantedIngredients": [
-            "E120"
-        ],
-        "categories_tags": [
-            "en:chocolate-covered-peanuts"
-        ],
-        "product_name": "M\u0026m\u0027s peanut",
-        "image_url": "https://images.openfoodfacts.org/images/products/401/110/000/5846/front_en.93.400.jpg",
-        "brands": [
-            "M\u0026M\u0027s"
-        ]
-    },
-    {
-        "barcode": "4011100005884",
-        "unwantedIngredients": [
-            "E120"
-        ],
-        "categories_tags": [
-            "en:chocolate-covered-peanuts"
-        ],
-        "product_name": "m\u0026m",
-        "image_url": "https://images.openfoodfacts.org/images/products/401/110/000/5884/front.5.400.jpg",
-        "brands": [
-            "m\u0026m"
-        ]
-    },
-    {
         "barcode": "4011100015470",
         "unwantedIngredients": [
             "E120"
@@ -3859,8 +3745,8 @@
         ],
         "categories_tags": [
             "Lebensmittel",
-            "en:dairies",
-            "en:beverages"
+            "en:beverages",
+            "en:dairies"
         ],
         "product_name": "Erdbeermilch",
         "image_url": "https://images.openfoodfacts.org/images/products/401/285/005/3521/front_de.8.400.jpg",
@@ -5499,21 +5385,6 @@
         "image_url": "https://images.openfoodfacts.org/images/products/403/940/108/6708/front_de.8.400.jpg",
         "brands": [
             "Karls"
-        ]
-    },
-    {
-        "barcode": "4040328002382",
-        "unwantedIngredients": [
-            "E120"
-        ],
-        "categories_tags": [
-            "en:sausages",
-            "en:meats"
-        ],
-        "product_name": "",
-        "image_url": "https://images.openfoodfacts.org/images/products/404/032/800/2382/front.6.400.jpg",
-        "brands": [
-            "Baktat"
         ]
     },
     {
@@ -7358,20 +7229,6 @@
         ]
     },
     {
-        "barcode": "4250576842153",
-        "unwantedIngredients": [
-            "E 120"
-        ],
-        "categories_tags": [
-            "Lebensmittel"
-        ],
-        "product_name": "Bio Haselnuss Creme",
-        "image_url": "https://images.openfoodfacts.org/images/products/425/057/684/2153/front_de.11.400.jpg",
-        "brands": [
-            "Zurheide Feinkost"
-        ]
-    },
-    {
         "barcode": "4250651102066",
         "unwantedIngredients": [
             "Karmin"
@@ -9061,22 +8918,6 @@
         ]
     },
     {
-        "barcode": "5410041143508",
-        "unwantedIngredients": [
-            "E120"
-        ],
-        "categories_tags": [
-            "Lebensmittel"
-        ],
-        "product_name": "Tuc",
-        "image_url": "https://images.openfoodfacts.org/images/products/541/004/114/3508/front_en.106.400.jpg",
-        "brands": [
-            "LU",
-            "Mondelēz",
-            "Tuc"
-        ]
-    },
-    {
         "barcode": "5410321880048",
         "unwantedIngredients": [
             "E120",
@@ -9288,21 +9129,6 @@
         ]
     },
     {
-        "barcode": "5997523317072",
-        "unwantedIngredients": [
-            "E120"
-        ],
-        "categories_tags": [
-            "Lebensmittel",
-            "en:plant-based-foods"
-        ],
-        "product_name": "Cup Noodles Hot Chili Spicy - Roasted Sesame Soup",
-        "image_url": "https://images.openfoodfacts.org/images/products/599/752/331/7072/front_en.48.400.jpg",
-        "brands": [
-            "Nissin"
-        ]
-    },
-    {
         "barcode": "6411401015793",
         "unwantedIngredients": [
             "E904"
@@ -9358,21 +9184,6 @@
         "image_url": "https://images.openfoodfacts.org/images/products/70103625/front_fr.3.400.jpg",
         "brands": [
             "Bofrost"
-        ]
-    },
-    {
-        "barcode": "7610026426543",
-        "unwantedIngredients": [
-            "E 120"
-        ],
-        "categories_tags": [
-            "Lebensmittel",
-            "en:desserts"
-        ],
-        "product_name": "Extrême Chocolat",
-        "image_url": "https://images.openfoodfacts.org/images/products/761/002/642/6543/front_fr.5.400.jpg",
-        "brands": [
-            "Nestlé"
         ]
     },
     {
@@ -10322,21 +10133,6 @@
         "image_url": "https://images.openfoodfacts.org/images/products/761/340/422/4274/front_fr.10.400.jpg",
         "brands": [
             "Migros"
-        ]
-    },
-    {
-        "barcode": "7613404378328",
-        "unwantedIngredients": [
-            "E 120"
-        ],
-        "categories_tags": [
-            "en:dairies",
-            "en:beverages"
-        ],
-        "product_name": "Oh! High Protein Drink Caramel",
-        "image_url": "https://images.openfoodfacts.org/images/products/761/340/437/8328/front_fr.3.400.jpg",
-        "brands": [
-            "oh"
         ]
     },
     {
