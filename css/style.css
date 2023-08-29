@@ -104,8 +104,9 @@ html {
     background-color: rgb(200, 200, 200);
 }
 
-.closeBtn {
-    float: right;
+.search-container {
+    display: grid;
+    grid-template-columns: auto max-content max-content;
 }
 
 /* END: Fullscreen Search */
