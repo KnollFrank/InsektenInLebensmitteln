@@ -52,65 +52,60 @@
             <button id="prevBtn" class="tablink">
                 <img src="img/back-svgrepo-com.svg" />
             </button>
-            <div id="categoryText" class="tablink"></div>
-            <button id="openSearchButton" class="openBtn"><i class="fa fa-search"></i></button>
+            <div id="categoryText" class="tablink disableHover"></div>
+            <button id="openSearchButton" class="openBtn tablink"><i class="fa fa-search"></i></button>
         </div>
 
         <div class="body">
-            <div class="main">
-                <div class="pageContent">
-                    <h1>Diese Lebensmittel enthalten Insekten:</h1>
-                    <!-- FK-TODO: rename products to productsAndCategories. Dito accompanying variable names in js code -->
-                    <div id="products"></div>
-                    <a
-                        href='https://play.google.com/store/apps/details?id=de.foodIngredientsScanner&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img
-                            alt='Jetzt bei Google Play'
-                            src='https://play.google.com/intl/en_us/badges/static/images/badges/de_badge_web_generic.png' /></a>
-                </div>
-            </div>
+            <h1>Diese Lebensmittel enthalten Insekten:</h1>
+            <!-- FK-TODO: rename products to productsAndCategories. Dito accompanying variable names in js code -->
+            <div id="products"></div>
+            <a
+                href='https://play.google.com/store/apps/details?id=de.foodIngredientsScanner&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img
+                    alt='Jetzt bei Google Play'
+                    src='https://play.google.com/intl/en_us/badges/static/images/badges/de_badge_web_generic.png' /></a>
         </div>
     </div>
 
     <div id="searchOverlay" class="overlay">
-        <span id="closeSearchButton" class="closebtn" title="Close Overlay">×</span>
-        <div class="overlay-content">
-            <div class="rootContainer">
-                <div class="body">
-                    <div class="main">
-                        <div class="pageContent">
-                            <div class="search-container">
-                                <form id="searchform">
-                                    <input type="text" id="searchInput" placeholder="Produkt oder Marke" name="search">
-                                    <button type="submit"><i class="fa fa-search"></i></button>
-                                </form>
-                            </div>
-                            <div id="productsSearch"></div>
-                        </div>
-                    </div>
+        <div class="rootContainer">
+            <div class="topnav">
+                <div class="search-container">
+                    <form id="searchform">
+                        <input type="text" class="tablink" id="searchInput" placeholder="Produkt oder Marke"
+                            name="search">
+                        <button type="submit" class="tablink"><i class="fa fa-search"></i></button>
+                    </form>
                 </div>
+                <button id="closeSearchButton" class="closeBtn tablink"><i class="fa fa-close"></i></button>
+            </div>
+
+            <div class="body">
+                <div id="productsSearch"></div>
             </div>
         </div>
+    </div>
 
-        <template id="template-ProductCardView">
-            <div class="card" style="display: inline-block;">
-                <img class="product_image" loading="lazy" />
-                <div class="product_name"></div>
-                <div>
-                    <span>Zutaten:</span>
-                    <span class="unwantedIngredients"></span>
-                </div>
-                <div>
-                    <span>Marken:</span>
-                    <span class="brands"></span>
-                </div>
+    <template id="template-ProductCardView">
+        <div class="card" style="display: inline-block;">
+            <img class="product_image" loading="lazy" />
+            <div class="product_name"></div>
+            <div>
+                <span>Zutaten:</span>
+                <span class="unwantedIngredients"></span>
             </div>
-        </template>
+            <div>
+                <span>Marken:</span>
+                <span class="brands"></span>
+            </div>
+        </div>
+    </template>
 
-        <template id="template-CategoryCardView">
-            <div class="card" style="display: inline-block;">
-                <div class="category_name"></div>
-            </div>
-        </template>
+    <template id="template-CategoryCardView">
+        <div class="card" style="display: inline-block;">
+            <div class="category_name"></div>
+        </div>
+    </template>
 </body>
 
 </html>
