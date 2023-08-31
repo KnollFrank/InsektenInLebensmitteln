@@ -71,22 +71,24 @@ html {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.card .heading {
-    margin-top: 0;
-}
-
-.card .container {
-    margin-top: 10px;
-}
-
 .card .product_name {
     font-weight: bold;
     margin-top: 10px;
 }
 
-.card img {
+.card .category_name {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.card .product_image {
     display: block;
     margin: auto;
+}
+
+.card .loading_image {
+    margin: auto;
+    width: max-content;
 }
 
 /* END: Card */
