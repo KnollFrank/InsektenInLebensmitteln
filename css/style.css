@@ -129,6 +129,10 @@ dialog {
     overflow-y: scroll;
 }
 
+.dialog .dialog-footer {
+    margin-top: 10px;
+}
+
 /* END: Dialog */
 
 #logo-img {

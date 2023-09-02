@@ -116,6 +116,18 @@
         ]
     },
     {
+        "barcode": "0071570001841",
+        "unwantedIngredients": [
+            "E904"
+        ],
+        "categories_tags": [
+            "en:gummi-candies"
+        ],
+        "product_name": "",
+        "image_url": "https://images.openfoodfacts.org/images/products/007/157/000/1841/front_en.11.400.jpg",
+        "brands": []
+    },
+    {
         "barcode": "0071570004293",
         "unwantedIngredients": [
             "E904"
@@ -181,20 +193,6 @@
         "image_url": "https://images.openfoodfacts.org/images/products/007/157/001/2335/front_fr.25.400.jpg",
         "brands": [
             "Jelly Belly"
-        ]
-    },
-    {
-        "barcode": "0121969120049",
-        "unwantedIngredients": [
-            "E 120"
-        ],
-        "categories_tags": [
-            "en:meals"
-        ],
-        "product_name": "Piffero hawaï",
-        "image_url": "https://images.openfoodfacts.org/images/products/012/196/912/0049/front_de.15.400.jpg",
-        "brands": [
-            "bofrost"
         ]
     },
     {
@@ -919,6 +917,20 @@
         "image_url": "https://images.openfoodfacts.org/images/products/21995002/front_de.3.400.jpg",
         "brands": [
             "Puda"
+        ]
+    },
+    {
+        "barcode": "2200281893430",
+        "unwantedIngredients": [
+            "Schellack"
+        ],
+        "categories_tags": [
+            "en:gummi-candies"
+        ],
+        "product_name": "BEANIEs Jelly Beans",
+        "image_url": "https://images.openfoodfacts.org/images/products/220/028/189/3430/front_de.12.400.jpg",
+        "brands": [
+            "MIA BELLA"
         ]
     },
     {
@@ -3513,6 +3525,20 @@
         "brands": []
     },
     {
+        "barcode": "4009853110566",
+        "unwantedIngredients": [
+            "E 904",
+            "E120",
+            "E 120"
+        ],
+        "categories_tags": [],
+        "product_name": "",
+        "image_url": "https://images.openfoodfacts.org/images/products/400/985/311/0566/front_fr.3.400.jpg",
+        "brands": [
+            "Decocino"
+        ]
+    },
+    {
         "barcode": "4009853113727",
         "unwantedIngredients": [
             "E120"
@@ -4563,6 +4589,16 @@
         ]
     },
     {
+        "barcode": "4024698482807",
+        "unwantedIngredients": [
+            "Karmin"
+        ],
+        "categories_tags": [],
+        "product_name": "",
+        "image_url": "https://images.openfoodfacts.org/images/products/402/469/848/2807/front_de.3.400.jpg",
+        "brands": []
+    },
+    {
         "barcode": "4024698485303",
         "unwantedIngredients": [
             "Karmin"
@@ -5227,21 +5263,6 @@
         ]
     },
     {
-        "barcode": "4036300144461",
-        "unwantedIngredients": [
-            "Karmin"
-        ],
-        "categories_tags": [
-            "Lebensmittel"
-        ],
-        "product_name": "Rote Grütze",
-        "image_url": "https://images.openfoodfacts.org/images/products/403/630/014/4461/front_de.13.400.jpg",
-        "brands": [
-            "Osterlamm",
-            " Osterland"
-        ]
-    },
-    {
         "barcode": "4036300152886",
         "unwantedIngredients": [
             "Karmin"
@@ -5789,11 +5810,14 @@
             "E 120"
         ],
         "categories_tags": [
+            "Lebensmittel",
             "en:multi-coloured-vermicelli"
         ],
         "product_name": "Streudekor Zucker-Streusel",
         "image_url": "https://images.openfoodfacts.org/images/products/404/958/311/3956/front_de.10.400.jpg",
-        "brands": []
+        "brands": [
+            "Günthart"
+        ]
     },
     {
         "barcode": "4049583116926",
@@ -6602,7 +6626,7 @@
             "en:candies",
             "en:confectioneries"
         ],
-        "product_name": "",
+        "product_name": "mini marshmallow",
         "image_url": "https://images.openfoodfacts.org/images/products/406/146/331/2419/front_fr.3.400.jpg",
         "brands": [
             "Back Family"
@@ -8166,6 +8190,20 @@
         ]
     },
     {
+        "barcode": "4337185450778",
+        "unwantedIngredients": [
+            "Karmin"
+        ],
+        "categories_tags": [
+            "en:confectioneries"
+        ],
+        "product_name": "Kaugummi Cherry Menthol",
+        "image_url": "https://images.openfoodfacts.org/images/products/433/718/545/0778/front_de.3.400.jpg",
+        "brands": [
+            "K-Classic"
+        ]
+    },
+    {
         "barcode": "4337185504457",
         "unwantedIngredients": [
             "Karmin"
@@ -8352,7 +8390,7 @@
         "categories_tags": [
             "en:multi-coloured-vermicelli"
         ],
-        "product_name": "Tortenguss Rot",
+        "product_name": "Tortenguss rot",
         "image_url": "https://images.openfoodfacts.org/images/products/438/886/062/2768/front_en.13.400.jpg",
         "brands": [
             "Rewe",
@@ -8591,6 +8629,22 @@
         "image_url": "https://images.openfoodfacts.org/images/products/500/015/947/2005/front_fr.49.400.jpg",
         "brands": [
             "M\u0026M\u0027s"
+        ]
+    },
+    {
+        "barcode": "5000159472142",
+        "unwantedIngredients": [
+            "E120"
+        ],
+        "categories_tags": [
+            "en:bonbons"
+        ],
+        "product_name": "M\u0026Ms",
+        "image_url": "https://images.openfoodfacts.org/images/products/500/015/947/2142/front.5.400.jpg",
+        "brands": [
+            "Mars",
+            " Mars GmbH",
+            "Mars Chocolat"
         ]
     },
     {
@@ -9126,6 +9180,21 @@
         "image_url": "https://images.openfoodfacts.org/images/products/590/615/340/7145/front_de.8.400.jpg",
         "brands": [
             "Doti"
+        ]
+    },
+    {
+        "barcode": "5997523315474",
+        "unwantedIngredients": [
+            "Karmin"
+        ],
+        "categories_tags": [
+            "Lebensmittel",
+            "en:plant-based-foods"
+        ],
+        "product_name": "Cup noodle - Spicy",
+        "image_url": "https://images.openfoodfacts.org/images/products/599/752/331/5474/front_en.5.400.jpg",
+        "brands": [
+            "Nissin"
         ]
     },
     {
@@ -11012,20 +11081,6 @@
         ]
     },
     {
-        "barcode": "8410031953893",
-        "unwantedIngredients": [
-            "E120"
-        ],
-        "categories_tags": [
-            "en:candies"
-        ],
-        "product_name": "Chupa Chups Crazy Dips Strawberry X24",
-        "image_url": "https://images.openfoodfacts.org/images/products/841/003/195/3893/front_fr.4.400.jpg",
-        "brands": [
-            "Chupa chups"
-        ]
-    },
-    {
         "barcode": "8410031967685",
         "unwantedIngredients": [
             "Karmin"
@@ -11246,6 +11301,20 @@
         "product_name": "Paté du Chef",
         "image_url": "https://images.openfoodfacts.org/images/products/859/512/189/9753/front_de.5.400.jpg",
         "brands": []
+    },
+    {
+        "barcode": "8710506083507",
+        "unwantedIngredients": [
+            "Karmin"
+        ],
+        "categories_tags": [
+            "de:fleischsalat"
+        ],
+        "product_name": "",
+        "image_url": "https://images.openfoodfacts.org/images/products/871/050/608/3507/front_de.3.400.jpg",
+        "brands": [
+            "Homann"
+        ]
     },
     {
         "barcode": "8710506084221",
