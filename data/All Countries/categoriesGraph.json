@@ -1,0 +1,656 @@
+{
+    "creator": "JGraphT JSON Exporter",
+    "version": "1",
+    "nodes": [
+        {
+            "id": "en:cereals-and-potatoes"
+        },
+        {
+            "id": "en:plant-based-foods"
+        },
+        {
+            "id": "en:pastries"
+        },
+        {
+            "id": "en:meals-with-meat"
+        },
+        {
+            "id": "en:sausages"
+        },
+        {
+            "id": "en:frozen-desserts"
+        },
+        {
+            "id": "en:meals"
+        },
+        {
+            "id": "en:frozen-foods"
+        },
+        {
+            "id": "en:christmas-sweets"
+        },
+        {
+            "id": "en:yogurts"
+        },
+        {
+            "id": "en:fruit-yogurts"
+        },
+        {
+            "id": "en:fermented-dairy-desserts"
+        },
+        {
+            "id": "en:pork"
+        },
+        {
+            "id": "en:meats-and-their-products"
+        },
+        {
+            "id": "en:chocolate-candies"
+        },
+        {
+            "id": "en:carbonated-drinks"
+        },
+        {
+            "id": "en:dairies"
+        },
+        {
+            "id": "en:meats"
+        },
+        {
+            "id": "en:prepared-salads"
+        },
+        {
+            "id": "en:biscuits"
+        },
+        {
+            "id": "en:cheeses"
+        },
+        {
+            "id": "en:french-sausages"
+        },
+        {
+            "id": "en:chipolatas"
+        },
+        {
+            "id": "fr:taramas-au-cabillaud"
+        },
+        {
+            "id": "en:salted-spreads"
+        },
+        {
+            "id": "en:eggs"
+        },
+        {
+            "id": "en:desserts"
+        },
+        {
+            "id": "en:candies"
+        },
+        {
+            "id": "en:fruits-based-foods"
+        },
+        {
+            "id": "en:sweet-snacks"
+        },
+        {
+            "id": "en:fish-preparations"
+        },
+        {
+            "id": "en:gummi-candies"
+        },
+        {
+            "id": "en:bonbons"
+        },
+        {
+            "id": "en:cured-sausages"
+        },
+        {
+            "id": "en:milk-chocolates"
+        },
+        {
+            "id": "en:nuts"
+        },
+        {
+            "id": "en:marshmallows"
+        },
+        {
+            "id": "en:lollipops"
+        },
+        {
+            "id": "en:confectioneries"
+        },
+        {
+            "id": "en:fishes"
+        },
+        {
+            "id": "en:meat-preparations"
+        },
+        {
+            "id": "en:food-decorations"
+        },
+        {
+            "id": "en:syrups"
+        },
+        {
+            "id": "en:dairy-drinks"
+        },
+        {
+            "id": "en:prepared-meats"
+        },
+        {
+            "id": "en:chewing-gum"
+        },
+        {
+            "id": "en:fresh-foods"
+        },
+        {
+            "id": "en:plant-based-beverages"
+        },
+        {
+            "id": "en:biscuits-and-cakes"
+        },
+        {
+            "id": "en:fish-and-meat-and-eggs"
+        },
+        {
+            "id": "en:chocolates"
+        },
+        {
+            "id": "en:chocolate-molds"
+        },
+        {
+            "id": "en:chorizo"
+        },
+        {
+            "id": "en:mandarin-oranges"
+        },
+        {
+            "id": "en:appetizers"
+        },
+        {
+            "id": "en:beverages"
+        },
+        {
+            "id": "en:salami"
+        },
+        {
+            "id": "en:cakes"
+        },
+        {
+            "id": "en:christmas-foods-and-drinks"
+        },
+        {
+            "id": "en:almond-paste"
+        },
+        {
+            "id": "en:doughnuts"
+        },
+        {
+            "id": "fr:charcuteries-diverses"
+        },
+        {
+            "id": "en:oranges"
+        },
+        {
+            "id": "en:fresh-fruits"
+        },
+        {
+            "id": "en:dietary-supplements"
+        },
+        {
+            "id": "en:chocolate-covered-peanuts"
+        },
+        {
+            "id": "en:energy-drinks"
+        },
+        {
+            "id": "en:pastry-helpers"
+        },
+        {
+            "id": "en:insects"
+        },
+        {
+            "id": "fr:merguez"
+        },
+        {
+            "id": "en:festive-foods"
+        },
+        {
+            "id": "en:food-colorings"
+        },
+        {
+            "id": "en:sweetened-beverages"
+        },
+        {
+            "id": "en:spreads"
+        },
+        {
+            "id": "en:breakfasts"
+        },
+        {
+            "id": "en:multi-coloured-vermicelli"
+        },
+        {
+            "id": "en:dragees"
+        },
+        {
+            "id": "en:pate-in-crust"
+        },
+        {
+            "id": "en:meringues"
+        },
+        {
+            "id": "en:jelly-beans"
+        },
+        {
+            "id": "de:fleischsalat"
+        },
+        {
+            "id": "Verschiedenes"
+        },
+        {
+            "id": "en:salads"
+        },
+        {
+            "id": "Lebensmittel"
+        }
+    ],
+    "edges": [
+        {
+            "source": "en:plant-based-foods",
+            "target": "en:cereals-and-potatoes"
+        },
+        {
+            "source": "en:yogurts",
+            "target": "en:fruit-yogurts"
+        },
+        {
+            "source": "en:fermented-dairy-desserts",
+            "target": "en:yogurts"
+        },
+        {
+            "source": "en:french-sausages",
+            "target": "en:chipolatas"
+        },
+        {
+            "source": "en:sausages",
+            "target": "en:french-sausages"
+        },
+        {
+            "source": "en:chocolate-candies",
+            "target": "en:bonbons"
+        },
+        {
+            "source": "en:candies",
+            "target": "en:marshmallows"
+        },
+        {
+            "source": "en:candies",
+            "target": "en:gummi-candies"
+        },
+        {
+            "source": "en:candies",
+            "target": "en:lollipops"
+        },
+        {
+            "source": "en:confectioneries",
+            "target": "en:candies"
+        },
+        {
+            "source": "en:cured-sausages",
+            "target": "en:chorizo"
+        },
+        {
+            "source": "en:cured-sausages",
+            "target": "en:salami"
+        },
+        {
+            "source": "en:chocolates",
+            "target": "en:chocolate-molds"
+        },
+        {
+            "source": "en:cakes",
+            "target": "en:doughnuts"
+        },
+        {
+            "source": "en:biscuits-and-cakes",
+            "target": "en:biscuits"
+        },
+        {
+            "source": "en:frozen-foods",
+            "target": "en:frozen-desserts"
+        },
+        {
+            "source": "en:desserts",
+            "target": "en:frozen-desserts"
+        },
+        {
+            "source": "en:meals",
+            "target": "en:prepared-salads"
+        },
+        {
+            "source": "en:meals",
+            "target": "en:meals-with-meat"
+        },
+        {
+            "source": "en:confectioneries",
+            "target": "en:chewing-gum"
+        },
+        {
+            "source": "en:christmas-foods-and-drinks",
+            "target": "en:christmas-sweets"
+        },
+        {
+            "source": "en:confectioneries",
+            "target": "en:christmas-sweets"
+        },
+        {
+            "source": "en:beverages",
+            "target": "en:sweetened-beverages"
+        },
+        {
+            "source": "en:festive-foods",
+            "target": "en:christmas-foods-and-drinks"
+        },
+        {
+            "source": "en:dairies",
+            "target": "en:dairy-drinks"
+        },
+        {
+            "source": "en:prepared-meats",
+            "target": "en:cured-sausages"
+        },
+        {
+            "source": "en:sausages",
+            "target": "fr:merguez"
+        },
+        {
+            "source": "en:prepared-meats",
+            "target": "en:sausages"
+        },
+        {
+            "source": "en:prepared-meats",
+            "target": "fr:charcuteries-diverses"
+        },
+        {
+            "source": "en:meats-and-their-products",
+            "target": "en:prepared-meats"
+        },
+        {
+            "source": "en:confectioneries",
+            "target": "en:dragees"
+        },
+        {
+            "source": "en:sweet-snacks",
+            "target": "en:chocolates"
+        },
+        {
+            "source": "en:sweet-snacks",
+            "target": "en:biscuits-and-cakes"
+        },
+        {
+            "source": "en:sweet-snacks",
+            "target": "en:confectioneries"
+        },
+        {
+            "source": "en:meats",
+            "target": "en:insects"
+        },
+        {
+            "source": "en:meats-and-their-products",
+            "target": "en:meat-preparations"
+        },
+        {
+            "source": "en:pastries",
+            "target": "en:meringues"
+        },
+        {
+            "source": "en:biscuits-and-cakes",
+            "target": "en:pastries"
+        },
+        {
+            "source": "en:chocolates",
+            "target": "en:milk-chocolates"
+        },
+        {
+            "source": "en:gummi-candies",
+            "target": "en:jelly-beans"
+        },
+        {
+            "source": "en:confectioneries",
+            "target": "en:marshmallows"
+        },
+        {
+            "source": "en:confectioneries",
+            "target": "en:chocolate-candies"
+        },
+        {
+            "source": "en:beverages",
+            "target": "en:dairy-drinks"
+        },
+        {
+            "source": "en:beverages",
+            "target": "en:plant-based-beverages"
+        },
+        {
+            "source": "en:beverages",
+            "target": "en:carbonated-drinks"
+        },
+        {
+            "source": "en:beverages",
+            "target": "en:energy-drinks"
+        },
+        {
+            "source": "en:spreads",
+            "target": "en:salted-spreads"
+        },
+        {
+            "source": "en:biscuits-and-cakes",
+            "target": "en:cakes"
+        },
+        {
+            "source": "en:meats-and-their-products",
+            "target": "en:meats"
+        },
+        {
+            "source": "en:meats",
+            "target": "en:pork"
+        },
+        {
+            "source": "Verschiedenes",
+            "target": "en:salads"
+        },
+        {
+            "source": "Lebensmittel",
+            "target": "en:desserts"
+        },
+        {
+            "source": "Lebensmittel",
+            "target": "en:beverages"
+        },
+        {
+            "source": "Lebensmittel",
+            "target": "en:dairies"
+        },
+        {
+            "source": "Lebensmittel",
+            "target": "en:frozen-foods"
+        },
+        {
+            "source": "Lebensmittel",
+            "target": "en:fish-and-meat-and-eggs"
+        },
+        {
+            "source": "Lebensmittel",
+            "target": "en:spreads"
+        },
+        {
+            "source": "Lebensmittel",
+            "target": "en:festive-foods"
+        },
+        {
+            "source": "Lebensmittel",
+            "target": "en:meats-and-their-products"
+        },
+        {
+            "source": "Lebensmittel",
+            "target": "en:food-decorations"
+        },
+        {
+            "source": "Lebensmittel",
+            "target": "en:breakfasts"
+        },
+        {
+            "source": "Lebensmittel",
+            "target": "en:dietary-supplements"
+        },
+        {
+            "source": "Lebensmittel",
+            "target": "en:fresh-foods"
+        },
+        {
+            "source": "Lebensmittel",
+            "target": "Verschiedenes"
+        },
+        {
+            "source": "Lebensmittel",
+            "target": "en:meals"
+        },
+        {
+            "source": "Lebensmittel",
+            "target": "en:syrups"
+        },
+        {
+            "source": "en:prepared-meats",
+            "target": "en:pate-in-crust"
+        },
+        {
+            "source": "en:fruits-based-foods",
+            "target": "en:fresh-fruits"
+        },
+        {
+            "source": "en:meats-and-their-products",
+            "target": "en:pork"
+        },
+        {
+            "source": "en:salted-spreads",
+            "target": "fr:taramas-au-cabillaud"
+        },
+        {
+            "source": "Lebensmittel",
+            "target": "fr:taramas-au-cabillaud"
+        },
+        {
+            "source": "en:dairies",
+            "target": "en:fermented-dairy-desserts"
+        },
+        {
+            "source": "en:desserts",
+            "target": "en:fermented-dairy-desserts"
+        },
+        {
+            "source": "Lebensmittel",
+            "target": "en:eggs"
+        },
+        {
+            "source": "Lebensmittel",
+            "target": "en:pastry-helpers"
+        },
+        {
+            "source": "en:plant-based-foods",
+            "target": "en:fruits-based-foods"
+        },
+        {
+            "source": "en:bonbons",
+            "target": "en:chocolate-covered-peanuts"
+        },
+        {
+            "source": "en:food-decorations",
+            "target": "en:multi-coloured-vermicelli"
+        },
+        {
+            "source": "en:pastry-helpers",
+            "target": "en:multi-coloured-vermicelli"
+        },
+        {
+            "source": "en:confectioneries",
+            "target": "en:almond-paste"
+        },
+        {
+            "source": "Lebensmittel",
+            "target": "en:food-colorings"
+        },
+        {
+            "source": "en:dairies",
+            "target": "en:cheeses"
+        },
+        {
+            "source": "Lebensmittel",
+            "target": "en:chocolates"
+        },
+        {
+            "source": "Lebensmittel",
+            "target": "en:chocolate-candies"
+        },
+        {
+            "source": "en:plant-based-foods",
+            "target": "en:nuts"
+        },
+        {
+            "source": "Lebensmittel",
+            "target": "en:plant-based-foods"
+        },
+        {
+            "source": "Lebensmittel",
+            "target": "en:plant-based-beverages"
+        },
+        {
+            "source": "en:meat-preparations",
+            "target": "de:fleischsalat"
+        },
+        {
+            "source": "en:spreads",
+            "target": "de:fleischsalat"
+        },
+        {
+            "source": "Lebensmittel",
+            "target": "en:multi-coloured-vermicelli"
+        },
+        {
+            "source": "Lebensmittel",
+            "target": "en:fermented-dairy-desserts"
+        },
+        {
+            "source": "Lebensmittel",
+            "target": "en:cheeses"
+        },
+        {
+            "source": "en:fermented-dairy-desserts",
+            "target": "en:fruit-yogurts"
+        },
+        {
+            "source": "Lebensmittel",
+            "target": "en:sweet-snacks"
+        },
+        {
+            "source": "Lebensmittel",
+            "target": "en:appetizers"
+        },
+        {
+            "source": "en:fruits-based-foods",
+            "target": "en:mandarin-oranges"
+        },
+        {
+            "source": "en:fruits-based-foods",
+            "target": "en:oranges"
+        },
+        {
+            "source": "Lebensmittel",
+            "target": "en:fishes"
+        },
+        {
+            "source": "Lebensmittel",
+            "target": "en:fish-preparations"
+        }
+    ]
+}

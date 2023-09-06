@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Insekten in Lebensmitteln</title>
+    <title>Insects in Food</title>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WDZG766778"></script>
     <script>
@@ -26,22 +26,28 @@
                 const productsViewActivity =
                     new ProductsViewActivity(
                         {
-                            productsContainer: document.getElementById('products'),
-                            categoryText: document.getElementById('categoryText'),
-                            prevBtn: document.getElementById('prevBtn'),
+                            productsContainer: document.querySelector('#products'),
+                            categoryText: document.querySelector('#categoryText'),
+                            prevBtn: document.querySelector('#prevBtn'),
+                            countrySelectElement: document.querySelector('#country'),
+                            country:
+                                UIUtils.getSearchParam(
+                                    new URLSearchParams(window.location.search),
+                                    'country',
+                                    CountryController.ALL_COUNTRIES),
                             searchUI: {
                                 form: document.querySelector('#searchform'),
                                 input: document.querySelector('#searchInput'),
-                                productsContainer: document.getElementById('productsSearch')
+                                productsContainer: document.querySelector('#productsSearch')
                             },
                             overlay: {
-                                openButton: document.getElementById('openSearchButton'),
-                                closeButton: document.getElementById('closeSearchButton'),
-                                container: document.getElementById("searchOverlay")
+                                openButton: document.querySelector('#openSearchButton'),
+                                closeButton: document.querySelector('#closeSearchButton'),
+                                container: document.querySelector("#searchOverlay")
                             },
                             infoDialog: {
-                                openButton: document.getElementById('showInfoDialog'),
-                                dialogElement: document.getElementById('infoDialog')
+                                openButton: document.querySelector('#showInfoDialog'),
+                                dialogElement: document.querySelector('#infoDialog')
                             }
                         }
                     );
@@ -52,17 +58,24 @@
 
 <body>
     <div class="rootContainer">
-        <div class="topnav">
-            <button id="prevBtn" class="tablink">
-                <img src="img/back-svgrepo-com.svg" />
-            </button>
-            <div id="categoryText" class="tablink disableHover"></div>
-            <button id="showInfoDialog" class="openBtn tablink"> <i class="fa-solid fa-circle-info fa-lg"></i></button>
-            <button id="openSearchButton" class="openBtn tablink"><i class="fa fa-search"></i></button>
+        <div class="header">
+            <div class="firstHeaderRow">
+                <select id="country" name="country" class="tablink">
+                </select>
+                <button id="showInfoDialog" class="tablink alignRightThisAndTheRest"> <i
+                        class="fa-solid fa-circle-info fa-lg"></i></button>
+                <button id="openSearchButton" class="tablink"><i class="fa fa-search"></i></button>
+            </div>
+            <div class="secondHeaderRow">
+                <button id="prevBtn" class="tablink">
+                    <img src="img/back-svgrepo-com.svg" />
+                </button>
+                <div id="categoryText" class="tablink disableHover"></div>
+            </div>
         </div>
 
         <div class="body">
-            <h1>Diese Lebensmittel enthalten Insekten:</h1>
+            <h1>These foods contain insects:</h1>
             <!-- FK-TODO: rename products to productsAndCategories. Dito accompanying variable names in js code -->
             <div id="products"></div>
         </div>
@@ -70,7 +83,7 @@
 
     <div id="searchOverlay" class="overlay">
         <div class="rootContainer">
-            <div class="topnav">
+            <div class="header">
                 <form id="searchform">
                     <div class="search-container">
                         <input type="text" size="10" class="tablink" id="searchInput" placeholder="Produkt oder Marke"
@@ -132,12 +145,16 @@
             </div>
             <div class="product_name"></div>
             <div>
-                <span>Zutaten:</span>
+                <span>Ingredients:</span>
                 <span class="unwantedIngredients"></span>
             </div>
             <div>
-                <span>Marken:</span>
+                <span>Brands:</span>
                 <span class="brands"></span>
+            </div>
+            <div>
+                <span>Countries where sold:</span>
+                <span class="countries"></span>
             </div>
         </div>
     </template>

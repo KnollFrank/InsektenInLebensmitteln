@@ -21,15 +21,14 @@ html {
     overflow-y: scroll;
 }
 
-/* BEGIN: topnav */
-.topnav {
+/* BEGIN: header */
+.header {
     background-color: #333;
 }
 
 .tablink {
     background-color: #555;
     color: white;
-    float: left;
     border-radius: 5px;
     cursor: pointer;
     font-size: 17px;
@@ -46,17 +45,21 @@ html {
     background-color: #ccc;
 }
 
-.openBtn {
-    float: right;
-}
-
 #prevBtn {
     width: 21px;
     height: 21px;
     box-sizing: content-box;
 }
 
-/* END: topnav */
+.firstHeaderRow, .secondHeaderRow {
+    display: flex;
+}
+
+.alignRightThisAndTheRest {
+    margin-left: auto;
+}
+
+/* END: header */
 
 /* BEGIN: Card */
 .card {
