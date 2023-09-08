@@ -35,6 +35,12 @@
                                     new URLSearchParams(window.location.search),
                                     'country',
                                     CountryController.ALL_COUNTRIES),
+                            storeSelectElement: document.querySelector('#store'),
+                            store:
+                                UIUtils.getSearchParam(
+                                    new URLSearchParams(window.location.search),
+                                    'store',
+                                    StoreController.ALL_STORES),
                             searchUI: {
                                 form: document.querySelector('#searchform'),
                                 input: document.querySelector('#searchInput'),
@@ -62,11 +68,15 @@
             <div class="firstHeaderRow">
                 <select id="country" name="country" class="tablink">
                 </select>
-                <button id="showInfoDialog" class="tablink alignRightThisAndTheRest"> <i
+                <select id="store" name="store" class="tablink">
+                </select>
+            </div>
+            <div class="secondHeaderRow">
+                <button id="showInfoDialog" class="tablink"> <i
                         class="fa-solid fa-circle-info fa-lg"></i></button>
                 <button id="openSearchButton" class="tablink"><i class="fa fa-search"></i></button>
             </div>
-            <div class="secondHeaderRow">
+            <div class="thirdHeaderRow">
                 <button id="prevBtn" class="tablink">
                     <img src="img/back-svgrepo-com.svg" />
                 </button>
@@ -105,14 +115,16 @@
             <div class="dialog-content">
                 <h1>Development and Operation</h1>
                 <div>
-                    You are welcome to <form style='display:inline;' action="https://www.paypal.com/donate" method="post" target="_top">
-                    <input type="hidden" name="hosted_button_id" value="VJAUTLGA4QGGY" />
-                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0"
-                        name="submit" title="PayPal - The safer, easier way to pay online!"
-                        alt="Donate with PayPal button" />
-                    <img alt="" border="0" src="https://www.paypal.com/en_DE/i/scr/pixel.gif" width="1" height="1" />
-                </form> something for the further development and operation of this website.
-            </div>
+                    You are welcome to <form style='display:inline;' action="https://www.paypal.com/donate"
+                        method="post" target="_top">
+                        <input type="hidden" name="hosted_button_id" value="VJAUTLGA4QGGY" />
+                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0"
+                            name="submit" title="PayPal - The safer, easier way to pay online!"
+                            alt="Donate with PayPal button" />
+                        <img alt="" border="0" src="https://www.paypal.com/en_DE/i/scr/pixel.gif" width="1"
+                            height="1" />
+                    </form> something for the further development and operation of this website.
+                </div>
                 <h1>Android App</h1>
                 <p>
                     The product catalog is also available as an Android app
@@ -149,6 +161,10 @@
             <div>
                 <span>Brands:</span>
                 <span class="brands"></span>
+            </div>
+            <div>
+                <span>Stores:</span>
+                <span class="stores"></span>
             </div>
             <div>
                 <span>Countries:</span>

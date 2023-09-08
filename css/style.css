@@ -31,9 +31,8 @@ html {
     color: white;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 17px;
     margin: 5px;
-    padding: 15px;
+    padding: 10px;
     border-style: none;
 }
 
@@ -51,7 +50,7 @@ html {
     box-sizing: content-box;
 }
 
-.firstHeaderRow, .secondHeaderRow {
+.firstHeaderRow, .secondHeaderRow, .thirdHeaderRow {
     display: flex;
 }
 
