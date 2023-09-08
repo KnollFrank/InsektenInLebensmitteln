@@ -31,13 +31,13 @@
                             prevBtn: document.querySelector('#prevBtn'),
                             countrySelectElement: document.querySelector('#country'),
                             country:
-                                UIUtils.getSearchParam(
+                                Utils.getSearchParam(
                                     new URLSearchParams(window.location.search),
                                     'country',
                                     CountryController.ALL_COUNTRIES),
                             storeSelectElement: document.querySelector('#store'),
                             store:
-                                UIUtils.getSearchParam(
+                                Utils.getSearchParam(
                                     new URLSearchParams(window.location.search),
                                     'store',
                                     StoreController.ALL_STORES),
@@ -114,10 +114,10 @@
     <dialog id="infoDialog">
         <div class="dialog">
             <div class="dialog-content">
-                <h1>Development and Operation</h1>
+                <h1>Support</h1>
                 <div>
-                    You are welcome to <form style='display:inline;' action="https://www.paypal.com/donate"
-                        method="post" target="_top">
+                    If this website has helped you to identify a product containing insects, then you are welcome to
+                    <form style='display:inline;' action="https://www.paypal.com/donate" method="post" target="_top">
                         <input type="hidden" name="hosted_button_id" value="VJAUTLGA4QGGY" />
                         <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0"
                             name="submit" title="PayPal - The safer, easier way to pay online!"
@@ -128,14 +128,19 @@
                 </div>
                 <h1>Android App</h1>
                 <p>
-                    The product catalog is also available as an Android app
-                    <a
+                    Download the Android app <a
                         href='https://play.google.com/store/apps/details?id=de.foodIngredientsScanner&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
                         <img id="logo-img" alt='Jetzt bei Google Play'
-                            src='https://play.google.com/intl/en_us/badges/static/images/badges/de_badge_web_generic.png' /></a>.
-                    Use it to film the barcode or ingredient list of a food item. Ingredients that consist of insects
-                    are marked in red:
+                            src='https://play.google.com/intl/en_us/badges/static/images/badges/de_badge_web_generic.png' /></a>
+                    that lets you film a food's barcode or ingredient list. Ingredients made
+                    from insects are marked red.
                     <img class="margin-top center" src="img/Erdbeeren.jpg" />
+                </p>
+                <h1>Acknowledgements</h1>
+                <p>
+                    All products presented on this website come from the <a href="https://world.openfoodfacts.org/"
+                        target="_blank">Open Food Facts</a> database. Many thanks to the team and contributors at Open
+                    Food Facts for building this great database.
                 </p>
             </div>
             <div class="dialog-footer">
