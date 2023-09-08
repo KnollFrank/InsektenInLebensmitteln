@@ -50,7 +50,7 @@ html {
     box-sizing: content-box;
 }
 
-.firstHeaderRow, .secondHeaderRow, .thirdHeaderRow {
+.headerRow {
     display: flex;
 }
 
