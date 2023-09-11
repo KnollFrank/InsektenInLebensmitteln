@@ -23,6 +23,7 @@
         document.addEventListener(
             'DOMContentLoaded',
             event => {
+                const urlSearchParams = new URLSearchParams(window.location.search);
                 const productsViewActivity =
                     new ProductsViewActivity(
                         {
@@ -30,17 +31,9 @@
                             categoryText: document.querySelector('#categoryText'),
                             prevBtn: document.querySelector('#prevBtn'),
                             countrySelectElement: document.querySelector('#country'),
-                            country:
-                                Utils.getSearchParam(
-                                    new URLSearchParams(window.location.search),
-                                    'country',
-                                    CountryController.ALL_COUNTRIES),
+                            country: UrlUtils.getSearchParam(urlSearchParams, 'country', CountryController.ALL_COUNTRIES),
                             storeSelectElement: document.querySelector('#store'),
-                            store:
-                                Utils.getSearchParam(
-                                    new URLSearchParams(window.location.search),
-                                    'store',
-                                    StoreController.ALL_STORES),
+                            store: UrlUtils.getSearchParam(urlSearchParams, 'store', StoreController.ALL_STORES),
                             searchUI: {
                                 form: document.querySelector('#searchform'),
                                 input: document.querySelector('#searchInput'),
@@ -53,7 +46,9 @@
                             },
                             infoDialog: {
                                 openButton: document.querySelector('#showInfoDialog'),
-                                dialogElement: document.querySelector('#infoDialog')
+                                dialogElement: document.querySelector('#infoDialog'),
+                                showSupportSection: !UrlUtils.isSearchParamNO(urlSearchParams, 'showSupportSection'),
+                                showAndroidAppSection: !UrlUtils.isSearchParamNO(urlSearchParams, 'showAndroidAppSection')
                             }
                         }
                     );
@@ -114,34 +109,42 @@
     <dialog id="infoDialog">
         <div class="dialog">
             <div class="dialog-content">
-                <h1>Support</h1>
-                <div>
-                    If this website has helped you to identify a product containing insects, then you are welcome to
-                    <form style='display:inline;' action="https://www.paypal.com/donate" method="post" target="_top">
-                        <input type="hidden" name="hosted_button_id" value="VJAUTLGA4QGGY" />
-                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0"
-                            name="submit" title="PayPal - The safer, easier way to pay online!"
-                            alt="Donate with PayPal button" />
-                        <img alt="" border="0" src="https://www.paypal.com/en_DE/i/scr/pixel.gif" width="1"
-                            height="1" />
-                    </form> something for the further development and operation of this website.
-                </div>
-                <h1>Android App</h1>
-                <p>
-                    Download the Android app <a
-                        href='https://play.google.com/store/apps/details?id=de.foodIngredientsScanner&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
-                        <img id="logo-img" alt='Jetzt bei Google Play'
-                            src='https://play.google.com/intl/en_us/badges/static/images/badges/de_badge_web_generic.png' /></a>
-                    that lets you film a food's barcode or ingredient list. Ingredients made
-                    from insects are marked red.
-                    <img class="margin-top center" src="img/Erdbeeren.jpg" />
-                </p>
-                <h1>Acknowledgements</h1>
-                <p>
-                    All products presented on this website come from the <a href="https://world.openfoodfacts.org/"
-                        target="_blank">Open Food Facts</a> database. Many thanks to the team and contributors at Open
-                    Food Facts for building this great database.
-                </p>
+                <section id="Support">
+                    <h1>Support</h1>
+                    <div>
+                        If this website has helped you to identify a product containing insects, then you are welcome to
+                        <form style='display:inline;' action="https://www.paypal.com/donate" method="post"
+                            target="_top">
+                            <input type="hidden" name="hosted_button_id" value="VJAUTLGA4QGGY" />
+                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif"
+                                border="0" name="submit" title="PayPal - The safer, easier way to pay online!"
+                                alt="Donate with PayPal button" />
+                            <img alt="" border="0" src="https://www.paypal.com/en_DE/i/scr/pixel.gif" width="1"
+                                height="1" />
+                        </form> something for the further development and operation of this website.
+                    </div>
+                </section>
+                <section id="AndroidApp">
+                    <h1>Android App</h1>
+                    <p>
+                        Download the Android app <a
+                            href='https://play.google.com/store/apps/details?id=de.foodIngredientsScanner&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
+                            <img id="logo-img" alt='Jetzt bei Google Play'
+                                src='https://play.google.com/intl/en_us/badges/static/images/badges/de_badge_web_generic.png' /></a>
+                        that lets you film a food's barcode or ingredient list. Ingredients made
+                        from insects are marked red.
+                        <img class="margin-top center" src="img/Erdbeeren.jpg" />
+                    </p>
+                </section>
+                <section>
+                    <h1>Acknowledgements</h1>
+                    <p>
+                        All products presented on this website come from the <a href="https://world.openfoodfacts.org/"
+                            target="_blank">Open Food Facts</a> database. Many thanks to the team and contributors at
+                        Open
+                        Food Facts for building this great database.
+                    </p>
+                </section>
             </div>
             <div class="dialog-footer">
                 <form method="dialog">
