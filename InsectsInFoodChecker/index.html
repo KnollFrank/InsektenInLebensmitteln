@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Insects in Food Checker</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WDZG766778"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-WDZG766778');
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="./InsectsInFoodChecker.min.js"></script>
+    <script>
+        document.addEventListener(
+            'DOMContentLoaded',
+            event => {
+                const insectsInFoodCheckerActivity =
+                    new InsectsInFoodCheckerActivity(
+                        {
+                            ingredients: document.querySelector('#ingredients'),
+                            ingredientsWithInsectsBlock: document.querySelector('#ingredientsWithInsectsBlock'),
+                            ingredientsWithInsects: document.querySelector('#ingredientsWithInsects'),
+                            noIngredientsWithInsectsFoundBlock: document.querySelector('#noIngredientsWithInsectsFoundBlock')
+                        });
+                insectsInFoodCheckerActivity.start();
+            });
+    </script>
+</head>
+
+<body>
+    <h1>Insects in Food Checker</h1>
+    <form id="searchform">
+        <p><label for="ingredients">Ingredients:</label></p>
+        <textarea id="ingredients" name="ingredients" rows="4" cols="50" placeholder="enter ingredients"></textarea>
+        <p>
+            <input type="submit" value="Check for insects">
+        </p>
+    </form>
+    <p id="ingredientsWithInsectsBlock">
+        Ingredients containing Insects: <span id="ingredientsWithInsects"></span>
+    </p>
+    <p id="noIngredientsWithInsectsFoundBlock">
+        No ingredients containing insects found.
+    </p>
+</body>
+
+</html>
