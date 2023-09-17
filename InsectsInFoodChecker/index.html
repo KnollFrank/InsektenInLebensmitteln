@@ -26,7 +26,8 @@
                             ingredients: document.querySelector('#ingredients'),
                             ingredientsWithInsectsBlock: document.querySelector('#ingredientsWithInsectsBlock'),
                             ingredientsWithInsects: document.querySelector('#ingredientsWithInsects'),
-                            noIngredientsWithInsectsFoundBlock: document.querySelector('#noIngredientsWithInsectsFoundBlock')
+                            noIngredientsWithInsectsFoundBlock: document.querySelector('#noIngredientsWithInsectsFoundBlock'),
+                            ingredientsWithInsectsList: document.querySelector('#ingredientsWithInsectsList')
                         });
                 insectsInFoodCheckerActivity.start();
             });
@@ -41,6 +42,7 @@
         <p>
             <input type="submit" value="Check for insects">
         </p>
+        (any of <span id="ingredientsWithInsectsList"></span>)
     </form>
     <p id="ingredientsWithInsectsBlock">
         Ingredients containing Insects: <span id="ingredientsWithInsects"></span>
