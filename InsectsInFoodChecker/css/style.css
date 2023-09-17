@@ -8,6 +8,10 @@ html {
     overflow: scroll;
 }
 
+#ingredients {
+    width: 100%;
+}
+
 #noIngredientsWithInsectsFoundBlock {
     width: fit-content;
     background-color: lightgreen;
