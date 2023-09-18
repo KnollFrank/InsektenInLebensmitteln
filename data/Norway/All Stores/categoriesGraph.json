@@ -1,1 +1,1 @@
-{"creator":"JGraphT JSON Exporter","version":"1","nodes":[{"id":"en:candies"},{"id":"en:snacks"},{"id":"Groceries"}],"edges":[{"source":"Groceries","target":"en:snacks"},{"source":"en:snacks","target":"en:candies"}]}
+{"creator":"JGraphT JSON Exporter","version":"1","nodes":[{"id":"en:sweet-snacks"},{"id":"en:candies"},{"id":"Groceries"}],"edges":[{"source":"en:sweet-snacks","target":"en:candies"},{"source":"Groceries","target":"en:sweet-snacks"}]}
