@@ -28,6 +28,7 @@
                             ingredientsWithInsects: document.querySelector('#ingredientsWithInsects'),
                             noIngredientsWithInsectsFoundBlock: document.querySelector('#noIngredientsWithInsectsFoundBlock'),
                             ingredientsWithInsectsList: document.querySelector('#ingredientsWithInsectsList'),
+                            submitButton: document.querySelector('#submitButton'),
                             clearButton: document.querySelector('#clearButton')
                         });
                 insectsInFoodCheckerActivity.start();
@@ -42,7 +43,7 @@
         <textarea id="ingredients" name="ingredients" rows="4" placeholder="enter ingredients"
             spellcheck="false"></textarea>
         <p>
-            <input type="submit" value="Check for insects">
+            <input type="submit" value="Check for insects" id="submitButton">
             <input type="button" value="Clear" id="clearButton">
         </p>
         (any of <span id="ingredientsWithInsectsList"></span>)
