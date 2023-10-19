@@ -14,6 +14,9 @@
 
         gtag('config', 'G-WDZG766778');
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- highlight-within-textarea CSS/JS -->
+    <link href="./highlight-within-textarea/jquery.highlight-within-textarea.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="./InsectsInFoodChecker.min.js"></script>
     <script>
@@ -23,7 +26,7 @@
                 const insectsInFoodCheckerActivity =
                     new InsectsInFoodCheckerActivity(
                         {
-                            ingredients: document.querySelector('#ingredients'),
+                            ingredientsJQuery: $('#ingredients'),
                             ingredientsWithInsectsBlock: document.querySelector('#ingredientsWithInsectsBlock'),
                             ingredientsWithInsects: document.querySelector('#ingredientsWithInsects'),
                             noIngredientsWithInsectsFoundBlock: document.querySelector('#noIngredientsWithInsectsFoundBlock'),
