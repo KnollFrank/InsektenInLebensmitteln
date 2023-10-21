@@ -22,8 +22,12 @@ html {
     width: 99vw;
 }
 
-.hwt-container {
-    background-color: #f8f9fa;
+.insects_no {
+    background-color: lightgreen;
+}
+
+.insects_yes {
+    background-color: #ffcbca;
 }
 
 .hwt-content {
@@ -39,7 +43,7 @@ html {
 
 .hwt-content mark {
     border-radius: 3px;
-    background-color: #ffcbca;
+    background-color: #ff9999;
 }
 
 .hwt-content mark.red {
