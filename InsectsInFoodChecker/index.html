@@ -40,7 +40,14 @@
 <body>
     <h1>Insects in Food Checker</h1>
     <div>
-        <p><label for="ingredients">Ingredients to check for insects:</label></p>
+        <p>
+            Check a product's ingredient list for insects.
+        <ul>
+            <li>Search for a product online, copy its ingredient list and paste it here, or</li>
+            <li>Take a photo of a product's ingredient list on your smartphone using the "Google Lens" app, copy the
+                recognized text and paste it here.</li>
+        </ul>
+        </p>
         <textarea id="ingredients" name="ingredients" rows="4" placeholder="Sugar, E120, Salt, ..."
             spellcheck="false"></textarea>
         <p>
@@ -56,6 +63,15 @@
     <p>
         (ingredients containing insects are: <span id="ingredientsWithInsectsList"></span>)
     </p>
+    <section id="Support">
+        If this website has helped you to identify a product containing insects, then you are welcome to
+        <form style='display:inline;' action="https://www.paypal.com/donate" method="post" target="_top">
+            <input type="hidden" name="hosted_button_id" value="VJAUTLGA4QGGY" />
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0"
+                name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+            <img alt="" border="0" src="https://www.paypal.com/en_DE/i/scr/pixel.gif" width="1" height="1" />
+        </form> something for the further development and operation of this website.
+    </section>
 </body>
 
 </html>
