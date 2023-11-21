@@ -149,3 +149,19 @@ dialog {
 .margin-top {
     margin-top: 10px;
 }
+
+#insectsInFoodCheckerLink:link {
+    text-decoration: none;
+}
+
+#insectsInFoodCheckerLink:visited {
+    text-decoration: none;
+}
+
+#insectsInFoodCheckerLink:hover {
+    text-decoration: none;
+}
+
+#insectsInFoodCheckerLink:active {
+    text-decoration: none;
+}
