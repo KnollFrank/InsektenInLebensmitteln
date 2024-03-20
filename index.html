@@ -29,6 +29,7 @@
                         {
                             productsContainer: document.querySelector('#products'),
                             categoryText: document.querySelector('#categoryText'),
+                            lastUpdated: document.querySelector('#lastUpdated'),
                             prevBtn: document.querySelector('#prevBtn'),
                             countrySelectElement: document.querySelector('#country'),
                             country: UrlUtils.getSearchParam(urlSearchParams, 'country', CountryController.ALL_COUNTRIES),
@@ -81,6 +82,9 @@
                     <img src="img/back-svgrepo-com.svg" />
                 </button>
                 <div id="categoryText" class="tablink disableHover"></div>
+                <div class="tablink disableHover">
+                    Last updated: <span id="lastUpdated"></span>
+                </div>
             </div>
         </div>
 
