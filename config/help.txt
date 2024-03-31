@@ -1,9 +1,9 @@
-http://www.insekteninlebensmitteln-javascript.org/docs/index.html
-http://www.insekteninlebensmitteln-javascript.org/index.test.html
+http://www.insekteninlebensmitteln.org/docs/index.html
+http://www.insekteninlebensmitteln.org/index.test.html
 https://knollfrank.github.io/InsektenInLebensmitteln/
 
-http://www.insekteninlebensmitteln-javascript.org/docs/InsectsInFoodChecker/index.html
-http://www.insekteninlebensmitteln-javascript.org/InsectsInFoodChecker/index.test.html
+http://www.insekteninlebensmitteln.org/docs/InsectsInFoodChecker/index.html
+http://www.insekteninlebensmitteln.org/InsectsInFoodChecker/index.test.html
 https://knollfrank.github.io/InsektenInLebensmitteln/InsectsInFoodChecker/
 
 http://www.insekteninlebensmitteln-javascript.org/documentation/index.html
@@ -18,17 +18,17 @@ sudo a2enmod headers
 apache2ctl -M | grep headers
 
 /etc/apache2/apache2.conf:
-<Directory /home/frankknoll/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln-JavaScript/>
+<Directory /home/frankknoll/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/>
         Options Indexes FollowSymLinks
         AllowOverride None
         Require all granted
 </Directory>
 
-/etc/apache2/sites-available/Keine-Insekten-im-Essen-JavaScript.conf
-sudo a2ensite Keine-Insekten-im-Essen-JavaScript.conf
+/etc/apache2/sites-available/Keine-Insekten-im-Essen.conf
+sudo a2ensite Keine-Insekten-im-Essen.conf
 
 /etc/hosts:
-127.0.0.1	www.InsektenInLebensmitteln-JavaScript.org
+127.0.0.1	www.InsektenInLebensmitteln.org
 
 systemctl restart apache2
 service apache2 status
