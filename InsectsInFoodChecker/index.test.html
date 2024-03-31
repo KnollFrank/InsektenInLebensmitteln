@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Insects in Food Checker</title>
+    <script src="../Utils.js"></script>
+    <script src="../UIUtils.js"></script>
+    <script src="./UnaryFunctionCache.js"></script>
+    <script src="./Pattern.js"></script>
+    <script src="./Patterns.js"></script>
+    <script src="./UnwantedIngredientsPatternsFactory.js"></script>
+    <script src="./TextNormalizer.js"></script>
+    <script src="./IndexMapper.js"></script>
+    <script src="./node-symspell/symSpell.js"></script>
+    <script src="./WordWithinTextFinder.js"></script>
+    <script src="./SpellingCorrector.js"></script>
+    <script src="./HighlightWithinTextarea.js"></script>
+    <script src="./IngredientsWithInsectsFinder.js"></script>
+    <script src="./InsectsInFoodCheckerActivity.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.17.2.css">
+    <script src="https://code.jquery.com/qunit/qunit-2.17.2.js"></script>
+    <script type="text/javascript" src="../test/jshamcrest.js"></script>
+    <script type="text/javascript" src="../test/jsmockito-1.0.4.js"></script>
+    <script>
+        JsHamcrest.Integration.QUnit();
+        JsMockito.Integration.QUnit();
+    </script>
+    <script src="./test/PatternsTest.js"></script>
+    <script src="./test/UnwantedIngredientsPatternsFactoryTest.js"></script>
+    <script src="./test/TextNormalizerTest.js"></script>
+    <script src="./test/WordWithinTextFinderTest.js"></script>
+    <script src="./test/SpellingCorrectorTest.js"></script>
+    <script src="./test/IndexMapperTest.js"></script>
+</head>
+
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+http://www.insekteninlebensmitteln-javascript.org/docs/index.html
+http://www.insekteninlebensmitteln-javascript.org/index.test.html
+https://knollfrank.github.io/InsektenInLebensmitteln/
+
+http://www.insekteninlebensmitteln-javascript.org/docs/InsectsInFoodChecker/index.html
+http://www.insekteninlebensmitteln-javascript.org/InsectsInFoodChecker/index.test.html
+https://knollfrank.github.io/InsektenInLebensmitteln/InsectsInFoodChecker/
+
+http://www.insekteninlebensmitteln-javascript.org/documentation/index.html
+
+Format Document (Ctrl+Shift+I) - Format the entire active file.
+
+https://www.npmjs.com/package/svg-path-parser
+npm install --global browserify
+
+- Apache2 Konfiguration:
+sudo a2enmod headers
+apache2ctl -M | grep headers
+
+/etc/apache2/apache2.conf:
+<Directory /home/frankknoll/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln-JavaScript/>
+        Options Indexes FollowSymLinks
+        AllowOverride None
+        Require all granted
+</Directory>
+
+/etc/apache2/sites-available/Keine-Insekten-im-Essen-JavaScript.conf
+sudo a2ensite Keine-Insekten-im-Essen-JavaScript.conf
+
+/etc/hosts:
+127.0.0.1	www.InsektenInLebensmitteln-JavaScript.org
+
+systemctl restart apache2
+service apache2 status
+
+
+https://play.google.com/intl/en_us/badges/
+
+FK-TODO:
+- "E 120" und "E120" zu E120 in der Android-App normalisieren. Dito "E 904" und "E904" zu "E904" normalisieren.
+- die Ersetzung einiger script-Tags in index.html durch das einzelne script-Tag "<script src="./InsektenInLebensmitteln.min.js"></script>"
+  um indexMin.html zu erhalten, soll automatisch im Shell-Skript config/publish.sh oder auch über eine Jupyter-Notebook erfolgen.
+  Siehe dazu Programmcode von HowBadIsMyBatch.
+  Dadurch müssen Änderungen in index.html nicht immer händisch nach indexMin.html übertragen werden.
+- Navigation zwischen Kategorien umsetzen wie hier: http://www.satraj.at/online-bestellen oder analog zur Android-App.
+  Verwende dazu auch https://developer.mozilla.org/en-US/docs/Web/API/History
+- den Chatverlauf aus der Telegramgruppe https://t.me/ilblistgruppe exportieren und die darin befindlichen Produkte
+  oder die in https://ilblist.com/wp-content/uploads/Insekten-Lebensmittel.pdf aufgelisteten Produkte
+  in OpenFoodFacts aufnehmen bzw. mit OpenFoodFacts abgleichen.
+  Dadurch werden sie in der Android-App und in der Web-App sichtbar werden.
+- Immer wenn Zutaten mit Insekten angezeigt werden (z.B. Karmin) dann einen Link zu einer
+  genaueren Beschreibung dieser Zutat anbieten (z.B. https://de.wikipedia.org/wiki/Karmin).
+- Telegram Bot https://core.telegram.org/bots/ zum Exportieren der Telegramkontakte
+  der Seiten "Produktmeldestelle" (https://t.me/ilblistgruppe/1) und "Chat zum Thema" (https://t.me/ilblistgruppe/8365)
+  programmieren. Dann all diese Kontakte in Telegram anschreiben und auf meine Webseite verweisen.
+- Browserplugin programmieren, das bei einem Onlineeinkauf vor Insektenzutaten warnt.
+- Neue E-Mail-Adresse einrichten und im InfoDialog für Feedback der Benutzer angeben.
+- Google Analytics verfeinern: Suche und Suchbegriff, Länderauswahl, ... mitprotokollieren.
+- Zeige standardmäßig Produkte für das Land in den Browsereinstellungen an: https://www.techighness.com/post/get-user-country-and-region-on-browser-with-javascript-only/
+- Die gesamte Webseite auf Englisch übersetzen.
+- Wenn bei der Suche nichts gefunden wird, dann wie in der App den Text "nichts gefunden" oder so einblenden.
+- Kategorien (Ordner) in der Sprache des ausgewählten Landes anzeigen.
+- "Check for insects"-Button entfernen und bei einer neuen Eingabe in die textarea automatisch auf Insekten prüfen.
+  Siehe dazu https://www.w3schools.com/jsref/event_oninput.asp
+NEXT-TODO:
+- Deployment auf neuem Computer zum Laufen bringen.
+- unerwünschte Zutaten rot markieren, siehe dazu https://codersblock.com/blog/highlight-text-inside-a-textarea/
+
+FK-FIXME:
+- Der Einsatz von Google-Analytics muß gemäß der Datenschutz-Grundverordnung (DSGVO) gemacht werden.
+
+Veröffentlichung auf https://knollfrank.github.io/InsektenInLebensmitteln/
+1. cd ~/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln-JavaScript/config
+2. ./publishAll.sh ~/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln-JavaScript/docs
+3. veröffentliche die durch 1. und 2. erfolgten Aktualisierungen im Projekt https://github.com/KnollFrank/InsektenInLebensmitteln

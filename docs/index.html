@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Insects in Food</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WDZG766778"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-WDZG766778');
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="graphology/graphology.js"></script>
+    <script src="graphology/graphology-library.js"></script>
+    <script src="./Utils.js"></script>
+    <script src="./UrlUtils.js"></script>
+    <script src="./UIUtils.js"></script>
+    <script src="./Graphs.js"></script>
+    <script src="./Config.js"></script>
+    <script src="./ProductCardViewFactory.js"></script>
+    <script src="./CategoryCardViewFactory.js"></script>
+    <script src="./ProductsView.js"></script>
+    <script src="./CategoriesView.js"></script>
+    <script src="./ProductsViewActivity.js"></script>
+    <script src="./Node.js"></script>
+    <script src="./Navigation.js"></script>
+    <script src="./CategoriesGraphProvider.js"></script>
+    <script src="./ProductsProvider.js"></script>
+    <script src="./ProductsAndCategoriesProvider.js"></script>
+    <script src="./ProductsAndCategoriesView.js"></script>
+    <script src="./NodeView.js"></script>
+    <script src="./ProductsOfNodesSetter.js"></script>
+    <script src="./ProductSearcher.js"></script>
+    <script src="./SearchController.js"></script>
+    <script src="./DisplayNamesOfNodesSetter.js"></script>
+    <script src="./NavigationController.js"></script>
+    <script src="./Overlay.js"></script>
+    <script src="./InfoDialogController.js"></script>
+    <script src="./CountryController.js"></script>
+    <script src="./StoreController.js"></script>
+    <script src="./ProductFilter.js"></script>
+    <script>
+        document.addEventListener(
+            'DOMContentLoaded',
+            event => {
+                const urlSearchParams = new URLSearchParams(window.location.search);
+                const productsViewActivity =
+                    new ProductsViewActivity(
+                        {
+                            productsContainer: document.querySelector('#products'),
+                            categoryText: document.querySelector('#categoryText'),
+                            lastUpdated: document.querySelector('#lastUpdated'),
+                            prevBtn: document.querySelector('#prevBtn'),
+                            countrySelectElement: document.querySelector('#country'),
+                            country: UrlUtils.getSearchParam(urlSearchParams, 'country', CountryController.ALL_COUNTRIES),
+                            storeSelectElement: document.querySelector('#store'),
+                            store: UrlUtils.getSearchParam(urlSearchParams, 'store', StoreController.ALL_STORES),
+                            searchUI: {
+                                form: document.querySelector('#searchform'),
+                                input: document.querySelector('#searchInput'),
+                                productsContainer: document.querySelector('#productsSearch')
+                            },
+                            overlay: {
+                                openButton: document.querySelector('#openSearchButton'),
+                                closeButton: document.querySelector('#closeSearchButton'),
+                                container: document.querySelector("#searchOverlay")
+                            },
+                            infoDialog: {
+                                openButton: document.querySelector('#showInfoDialog'),
+                                dialogElement: document.querySelector('#infoDialog'),
+                                showSupportSection: !UrlUtils.isSearchParamNO(urlSearchParams, 'showSupportSection'),
+                                showAndroidAppSection: !UrlUtils.isSearchParamNO(urlSearchParams, 'showAndroidAppSection')
+                            }
+                        }
+                    );
+                productsViewActivity.start();
+            });
+    </script>
+</head>
+
+<body>
+    <div class="rootContainer">
+        <div class="header">
+            <div>
+                <select id="country" name="country" class="tablink">
+                </select>
+                <select id="store" name="store" class="tablink">
+                </select>
+                <button id="openSearchButton" class="tablink"><i class="fa fa-search"></i></button>
+            </div>
+            <div class="headerRow">
+                <button id="prevBtn" class="tablink">
+                    <img src="img/back-svgrepo-com.svg" />
+                </button>
+                <div id="categoryText" class="tablink disableHover"></div>
+            </div>
+        </div>
+
+        <div class="body">
+            <h1>These foods contain insects:</h1>
+            <!-- FK-TODO: rename products to productsAndCategories. Dito accompanying variable names in js code -->
+            <div id="products"></div>
+        </div>
+
+        <div class="footer">
+            <div class="headerRow">
+                <div class="tablink disableHover">
+                    Last updated: <span id="lastUpdated"></span>
+                </div>
+                <a id="insectsInFoodCheckerLink" href="./InsectsInFoodChecker/index.html" target="_blank"
+                    class="tablink">
+                    Insects in Food Checker <i aria-hidden="true" class="fa fa-external-link"></i>
+                </a>
+                <button id="showInfoDialog" class="tablink"><i class="fa-solid fa-circle-info fa-lg"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div id="searchOverlay" class="overlay">
+        <div class="rootContainer">
+            <div class="header">
+                <form id="searchform">
+                    <div class="search-container">
+                        <input type="text" size="10" class="tablink" id="searchInput" placeholder="Product or Brand"
+                            name="search">
+                        <button type="submit" class="tablink"><i class="fa fa-search"></i></button>
+                        <button id="closeSearchButton" class="closeBtn tablink"><i class="fa fa-close"></i></button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="body">
+                <div id="productsSearch"></div>
+            </div>
+        </div>
+    </div>
+
+    <dialog id="infoDialog">
+        <div class="dialog">
+            <div class="dialog-content">
+                <section id="Support">
+                    <h1>Support</h1>
+                    <div>
+                        If this website has helped you to identify a product containing insects, then you are welcome to
+                        <form style='display:inline;' action="https://www.paypal.com/donate" method="post"
+                            target="_top">
+                            <input type="hidden" name="hosted_button_id" value="VJAUTLGA4QGGY" />
+                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif"
+                                border="0" name="submit" title="PayPal - The safer, easier way to pay online!"
+                                alt="Donate with PayPal button" />
+                            <img alt="" border="0" src="https://www.paypal.com/en_DE/i/scr/pixel.gif" width="1"
+                                height="1" />
+                        </form> something for the further development and operation of this website.
+                    </div>
+                </section>
+                <section>
+                    <h1>Acknowledgements</h1>
+                    <p>
+                        All products presented on this website come from the <a href="https://world.openfoodfacts.org/"
+                            target="_blank">Open Food Facts</a> database. Many thanks to the team and contributors at
+                        Open Food Facts for building this great database.
+                    </p>
+                </section>
+            </div>
+            <div class="dialog-footer">
+                <form method="dialog">
+                    <button>Close</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+    <template id="template-ProductCardView">
+        <div class="card" style="display: inline-block;">
+            <div>
+                <div class="loading_image">
+                    <i class="fa-solid fa-spinner fa-spin fa-2xl"></i>
+                </div>
+                <img class="product_image" loading="lazy" />
+            </div>
+            <div class="product_name"></div>
+            <div>
+                <span>Ingredients:</span>
+                <span class="unwantedIngredients"></span>
+            </div>
+            <div>
+                <span>Brands:</span>
+                <span class="brands"></span>
+            </div>
+            <div>
+                <span>Stores:</span>
+                <span class="stores"></span>
+            </div>
+            <div>
+                <span>Countries:</span>
+                <span class="countries"></span>
+            </div>
+        </div>
+    </template>
+
+    <template id="template-CategoryCardView">
+        <div class="card" style="display: inline-block;">
+            <!-- adapted from: https://fontawesome.com/icons/folder-open?f=classic&s=regular&sz=2xl -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="product_image" height="6em"
+                viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                <path
+                    d="M384 480h48c11.4 0 21.9-6 27.6-15.9l112-192c5.8-9.9 5.8-22.1 .1-32.1S555.5 224 544 224H144c-11.4 0-21.9 6-27.6 15.9L48 357.1V96c0-8.8 7.2-16 16-16H181.5c4.2 0 8.3 1.7 11.3 4.7l26.5 26.5c21 21 49.5 32.8 79.2 32.8H416c8.8 0 16 7.2 16 16v32h48V160c0-35.3-28.7-64-64-64H298.5c-17 0-33.3-6.7-45.3-18.7L226.7 50.7c-12-12-28.3-18.7-45.3-18.7H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H87.7 384z" />
+            </svg>
+            <div class="category_name"></div>
+        </div>
+    </template>
+</body>
+
+</html>

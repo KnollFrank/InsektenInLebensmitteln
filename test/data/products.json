@@ -1,0 +1,20 @@
+[
+    {
+        "barcode": "00106870",
+        "unwantedIngredients": [
+            "Schellack"
+        ],
+        "categories_tags": [
+            "en:bonbons"
+        ],
+        "product_name": "Pralines",
+        "image_url": "https://images.openfoodfacts.org/images/products/00106870/front_de.3.400.jpg",
+        "brands": [
+            "Sprüngli"
+        ],
+        "countries": [
+            "France",
+            "Switzerland"
+        ]
+    }
+]

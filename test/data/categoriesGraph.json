@@ -1,0 +1,18 @@
+{
+  "creator": "JGraphT JSON Exporter",
+  "version": "1",
+  "nodes": [
+    {
+      "id": "en:candies"
+    },
+    {
+      "id": "en:gummi-candies"
+    }
+  ],
+  "edges": [
+    {
+      "source": "en:candies",
+      "target": "en:gummi-candies"
+    }
+  ]
+}
