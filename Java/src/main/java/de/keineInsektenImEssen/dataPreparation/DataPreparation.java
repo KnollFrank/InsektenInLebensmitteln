@@ -6,11 +6,18 @@ import java.util.Optional;
 public class DataPreparation {
 
     /*
-        Execute manually in a terminal in order to download Open Food Facts Database:
-        cd /home/frankknoll/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/Java/tmp
-        wget --retry-connrefused --read-timeout=20 --timeout=15 --tries=0 --continue https://static.openfoodfacts.org/data/en.openfoodfacts.org.products.csv.gz
-        gunzip en.openfoodfacts.org.products.csv.gz
+        1. Downloading Open Food Facts Database:
+            cd /home/frankknoll/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/Java/tmp
+            wget --retry-connrefused --read-timeout=20 --timeout=15 --tries=0 --continue https://static.openfoodfacts.org/data/en.openfoodfacts.org.products.csv.gz
+            gunzip en.openfoodfacts.org.products.csv.gz
+        2. Running DataPreparation:
+            cd /home/frankknoll/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/Java
+            ./gradlew run \
+            --args="-openFoodFactsDatabase /home/frankknoll/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/Java/tmp/en.openfoodfacts.org.products.csv \
+                    -webAppDataDirectory /home/frankknoll/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/data \
+                    -tmpDir /home/frankknoll/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/Java/tmp"
     */
+
     public static void main(final String[] args) throws IOException {
         final Optional<Paths> pathsOption = PathsParser.parsePaths(args);
         if (pathsOption.isEmpty()) {
