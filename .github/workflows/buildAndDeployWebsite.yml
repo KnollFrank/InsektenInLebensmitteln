@@ -33,7 +33,7 @@ jobs:
           cd Java/tmp
           wget --retry-connrefused --read-timeout=20 --timeout=15 --tries=0 --continue https://static.openfoodfacts.org/data/en.openfoodfacts.org.products.csv.gz
           gunzip en.openfoodfacts.org.products.csv.gz
-      - name: running DataPreparation
+      - name: Running DataPreparation
         run: |
           cd Java
           mkdir -p ${{ github.workspace }}/data

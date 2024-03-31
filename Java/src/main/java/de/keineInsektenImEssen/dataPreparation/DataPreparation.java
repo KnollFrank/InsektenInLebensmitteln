@@ -6,8 +6,8 @@ import java.util.Optional;
 public class DataPreparation {
 
     /*
-        execute manually in a terminal:
-        cd /home/frankknoll/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/app/Keine-Insekten-im-Essen/tmp
+        Execute manually in a terminal in order to download Open Food Facts Database:
+        cd /home/frankknoll/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/Java/tmp
         wget --retry-connrefused --read-timeout=20 --timeout=15 --tries=0 --continue https://static.openfoodfacts.org/data/en.openfoodfacts.org.products.csv.gz
         gunzip en.openfoodfacts.org.products.csv.gz
     */

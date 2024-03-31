@@ -1,4 +1,0 @@
-./gradlew run \
-    --args="-openFoodFactsDatabase /home/frankknoll/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln-Java/tmp/en.openfoodfacts.org.products.csv \
-            -webAppDataDirectory /home/frankknoll/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln-JavaScript/data \
-            -tmpDir /home/frankknoll/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln-Java/tmp"

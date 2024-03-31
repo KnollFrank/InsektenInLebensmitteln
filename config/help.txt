@@ -70,6 +70,19 @@ FK-FIXME:
 - Der Einsatz von Google-Analytics muß gemäß der Datenschutz-Grundverordnung (DSGVO) gemacht werden.
 
 Veröffentlichung auf https://knollfrank.github.io/InsektenInLebensmitteln/
-1. cd ~/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln-JavaScript/config
-2. ./publishAll.sh ~/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln-JavaScript/docs
-3. veröffentliche die durch 1. und 2. erfolgten Aktualisierungen im Projekt https://github.com/KnollFrank/InsektenInLebensmitteln
+A. GitHub Action .github/workflows/buildAndDeployWebsite.yml auf github ausführen, oder
+B.
+   1. Downloading Open Food Facts Database:
+     cd /home/frankknoll/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/Java/tmp
+     wget --retry-connrefused --read-timeout=20 --timeout=15 --tries=0 --continue https://static.openfoodfacts.org/data/en.openfoodfacts.org.products.csv.gz
+     gunzip en.openfoodfacts.org.products.csv.gz
+   2. Running DataPreparation:
+     cd /home/frankknoll/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/Java
+     ./gradlew run \
+       --args="-openFoodFactsDatabase /home/frankknoll/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/Java/tmp/en.openfoodfacts.org.products.csv \
+               -webAppDataDirectory /home/frankknoll/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/data \
+               -tmpDir /home/frankknoll/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/Java/tmp"
+   3. Publishing Website:
+     cd /home/frankknoll/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/config
+     ./publishAll.sh /home/frankknoll/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/docs
+   4. git push
