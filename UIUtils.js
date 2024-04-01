@@ -21,6 +21,10 @@ class UIUtils {
         return element;
     }
 
+    static createDiv(text) {
+        return document.createElement('div');
+    }
+
     static clearChildrenOf(node) {
         while (node.firstChild) {
             node.removeChild(node.firstChild);

@@ -13,6 +13,7 @@ class ProductsAndCategoriesView {
     displayProductsAndCategories({ products, categories }) {
         UIUtils.clearChildrenOf(this.#productsContainer);
         this.#categoriesView.displayCategories(categories);
+        this.#productsContainer.appendChild(UIUtils.createDiv());
         this.#productsView.displayProducts(products);
     }
 
