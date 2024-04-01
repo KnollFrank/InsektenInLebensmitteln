@@ -21,7 +21,7 @@ class UIUtils {
         return element;
     }
 
-    static createDiv(text) {
+    static createDiv() {
         return document.createElement('div');
     }
 
