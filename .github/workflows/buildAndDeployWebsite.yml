@@ -48,7 +48,7 @@ jobs:
           cd config
           ./publishAll.sh ${{ github.workspace }}/docs
           git add -A
-          git commit -m "updating data"
+          git diff-index --quiet HEAD || git commit -m "updating data"
       - name: Pushing changes to GitHub Pages
         shell: bash -el {0}
         run: |
