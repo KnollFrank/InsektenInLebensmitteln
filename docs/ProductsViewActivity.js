@@ -30,7 +30,6 @@ class ProductsViewActivity {
         InfoDialogController.configureDialog(this.#infoDialog);
         this.#withLoadedDataDo(
             ({ categoriesGraph, products, countries, lastUpdated, stores }) => {
-                // FK-FIXME: falls this.#country einen ungültigen Wert hat, dann verwende stattdessen CountryController.ALL_COUNTRIES
                 CountryController.configure(
                     {
                         countrySelectElement: this.#countrySelectElement,
