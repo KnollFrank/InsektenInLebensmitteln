@@ -55,7 +55,7 @@
                 const productsViewActivity =
                     new ProductsViewActivity(
                         {
-                            productsContainer: document.querySelector('#products'),
+                            productsAndCategoriesContainer: document.querySelector('#productsAndCategories'),
                             categoryText: document.querySelector('#categoryText'),
                             lastUpdated: document.querySelector('#lastUpdated'),
                             prevBtn: document.querySelector('#prevBtn'),
@@ -106,8 +106,7 @@
 
         <div class="body">
             <h1>These foods contain insects:</h1>
-            <!-- FK-TODO: rename products to productsAndCategories. Dito accompanying variable names in js code -->
-            <div id="products"></div>
+            <div id="productsAndCategories"></div>
         </div>
 
         <div class="footer">

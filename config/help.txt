@@ -44,6 +44,9 @@ FK-TODO:
   Dadurch müssen Änderungen in index.html nicht immer händisch nach indexMin.html übertragen werden.
 - Navigation zwischen Kategorien umsetzen wie hier: http://www.satraj.at/online-bestellen oder analog zur Android-App.
   Verwende dazu auch https://developer.mozilla.org/en-US/docs/Web/API/History
+- Wenn es keine übergeordnete Kategorie gibt, dann den Back-Button disablen.
+- Bei einem Produkt ohne Name, einen Standardname anzeigen, der angeklickt werden kann und zur OpenFoodFacts-Seite des Produktes führt.
+  Oder das Produktbild anklickbar machen?
 - den Chatverlauf aus der Telegramgruppe https://t.me/ilblistgruppe exportieren und die darin befindlichen Produkte
   oder die in https://ilblist.com/wp-content/uploads/Insekten-Lebensmittel.pdf aufgelisteten Produkte
   in OpenFoodFacts aufnehmen bzw. mit OpenFoodFacts abgleichen.
