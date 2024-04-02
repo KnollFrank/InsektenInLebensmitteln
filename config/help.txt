@@ -56,7 +56,6 @@ NEXT-TODO:
 - Deployment auf neuem Computer zum Laufen bringen.
 
 FK-FIXME:
-- Der Einsatz von Google-Analytics muß gemäß der Datenschutz-Grundverordnung (DSGVO) gemacht werden.
 
 Veröffentlichung auf https://knollfrank.github.io/InsektenInLebensmitteln/
 A. GitHub Action .github/workflows/buildAndDeployWebsite.yml auf github ausführen, oder

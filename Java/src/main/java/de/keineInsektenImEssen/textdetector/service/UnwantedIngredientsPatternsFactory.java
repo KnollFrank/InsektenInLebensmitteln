@@ -6,15 +6,13 @@ import de.keineInsektenImEssen.textdetector.model.Pattern;
 import static de.keineInsektenImEssen.textdetector.service.MatcherFactory.contains;
 import static de.keineInsektenImEssen.textdetector.service.MatcherFactory.containsIgnoreCase;
 
-public class IngredientsProvider {
+public class UnwantedIngredientsPatternsFactory {
 
     // FK-TODO: zu jedem der folgenden unerwünschten Zutaten in openfoodfacts ein Beispielprodukt suchen und die JSON-Antwort auf unerwünschte Zutaten korrekt parsen (siehe https://de.openfoodfacts.org/cgi/search.pl?action=display&tagtype_0=ingredients&tag_contains_0=contains&tag_0=KARMIN&sort_by=unique_scans_n&page_size=20)
-    // FK-FIXME: Zutaten aus Open-Food-Facts können in anderen Sprachen als Deutsch (z.B. Englisch) hinterlegt sein, z.B. steht unter https://world.openfoodfacts.org/api/v2/product/20155902?fields=product_name,ingredients sugar statt Zucker. In unwantedIngredients müssen also auch die fremdsprachlichen Words hinterlegt werden.
 
     // FK-TODO: die unwantedIngredients in der App in einem Dialog als Liste anzeigen, damit der Benutzer weiß, welche Insektenzutaten die App überhaupt erkennt.
-    public static final ImmutableSet<Pattern> unwantedIngredients =
+    public static final ImmutableSet<Pattern> unwantedIngredientsPatterns =
             ImmutableSet.of(
-                    // FK-TODO: analog zur Webapp eine Pattern/Regexp-Behandlung einführen
                     // FK-TODO: die folgenden vier Words in einer Term-Klasse zusammenfassen
                     new Pattern("E 120", contains("E 120")),
                     new Pattern("E120", contains("E120")),

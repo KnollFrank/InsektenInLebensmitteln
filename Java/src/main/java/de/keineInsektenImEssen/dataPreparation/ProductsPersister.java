@@ -65,7 +65,6 @@ class ProductsPersister {
                                                   final Path tmpDir) throws IOException {
         final File productsJsonFile = tmpDir.resolve("products.json").toFile();
         persistAsJson(products, productsJsonFile);
-        // FK-TODO: die Datei "products.json" soll sich die Web-Anwendung von hier selbst abholen, denn die Android-App darf der Web-Anwendung keine Dateien heimlich unterschieben.
         copyFileToDirectory(productsJsonFile, destDir);
     }
 
@@ -84,7 +83,6 @@ class ProductsPersister {
         persistAsJson(
                 getDisplayNameByName(categoryByName, categoriesGraph.graph),
                 displayNameByNameFile);
-        // FK-TODO: die Datei displayNameByNameFile soll sich die Web-Anwendung von hier selbst abholen, denn die Android-App darf der Web-Anwendung keine Dateien heimlich unterschieben.
         copyFileToDirectory(displayNameByNameFile, destDir);
     }
 
