@@ -35,6 +35,7 @@ cp -t $dstDir/ \
    InfoDialogController.js \
    CountryController.js \
    StoreController.js \
+   SelectController.js \
    ProductFilter.js
 mkdir -p $dstDir/css
 cp css/style.css $dstDir/css/
