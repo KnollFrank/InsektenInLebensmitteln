@@ -48,7 +48,6 @@ FK-TODO:
   Dadurch werden sie in der Android-App und in der Web-App sichtbar werden.
 - Immer wenn Zutaten mit Insekten angezeigt werden (z.B. Karmin) dann einen Link zu einer
   genaueren Beschreibung dieser Zutat anbieten (z.B. https://de.wikipedia.org/wiki/Karmin).
-- Browserplugin programmieren, das bei einem Onlineeinkauf vor Insektenzutaten warnt.
 - Neue E-Mail-Adresse einrichten und im InfoDialog für Feedback der Benutzer angeben.
 - Google Analytics verfeinern: Suche und Suchbegriff, Länderauswahl, ... mitprotokollieren.
 - Zeige standardmäßig Produkte für das Land in den Browsereinstellungen an: https://www.techighness.com/post/get-user-country-and-region-on-browser-with-javascript-only/
