@@ -1,6 +1,6 @@
 class ProductsViewActivity {
 
-    #productsContainer;
+    #productsAndCategoriesContainer;
     #categoryText;
     #lastUpdated;
     #prevBtn;
@@ -12,8 +12,8 @@ class ProductsViewActivity {
     #overlay;
     #infoDialog;
 
-    constructor({ productsContainer, categoryText, lastUpdated, prevBtn, countrySelectElement, country, storeSelectElement, store, searchUI, overlay, infoDialog }) {
-        this.#productsContainer = productsContainer;
+    constructor({ productsAndCategoriesContainer, categoryText, lastUpdated, prevBtn, countrySelectElement, country, storeSelectElement, store, searchUI, overlay, infoDialog }) {
+        this.#productsAndCategoriesContainer = productsAndCategoriesContainer;
         this.#categoryText = categoryText;
         this.#lastUpdated = lastUpdated;
         this.#prevBtn = prevBtn;
@@ -75,7 +75,7 @@ class ProductsViewActivity {
             Graphs.getNodes(categoriesGraph),
             () => {
                 const rootNode = categoriesGraph.getNodeAttributes(Graphs.getRootNode(categoriesGraph));
-                const productsAndCategoriesView = new ProductsAndCategoriesView(this.#productsContainer);
+                const productsAndCategoriesView = new ProductsAndCategoriesView(this.#productsAndCategoriesContainer);
                 const navigationController =
                     new NavigationController(
                         new Navigation(rootNode),
