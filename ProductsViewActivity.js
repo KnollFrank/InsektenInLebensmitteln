@@ -82,7 +82,8 @@ class ProductsViewActivity {
                         new NodeView(
                             productsAndCategoriesView,
                             new ProductsAndCategoriesProvider(categoriesGraph),
-                            this.#categoryText));
+                            this.#categoryText),
+                        this.#prevBtn);
                 productsAndCategoriesView.setOnCategoryClicked(category => navigationController.gotoChildNode(category));
                 this.#prevBtn.addEventListener('click', _ => navigationController.gotoParentNode());
                 navigationController.gotoCurrentNode();

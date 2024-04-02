@@ -19,9 +19,13 @@ class Navigation {
     }
 
     gotoParentNodeIfExists() {
-        if (this.#nodes.length > 1) {
+        if (this.hasParentNode()) {
             this.#nodes.pop();
         }
         return this.getCurrentNode();
+    }
+
+    hasParentNode() {
+        return this.#nodes.length > 1;
     }
 }

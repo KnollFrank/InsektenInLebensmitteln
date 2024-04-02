@@ -50,6 +50,12 @@ html {
     box-sizing: content-box;
 }
 
+button:disabled {
+    opacity: 0.5;
+    cursor: none;
+    pointer-events: none;
+}
+
 .headerRow {
     display: flex;
 }
