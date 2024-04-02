@@ -1,12 +1,5 @@
 class UIUtils {
 
-    // FK-TODO: use a <template> in index.html
-    static createHeading(text) {
-        const heading = document.createElement('h2');
-        heading.appendChild(document.createTextNode(text));
-        return heading;
-    }
-
     static createLink({ href, text }) {
         const link = document.createElement('a');
         link.setAttribute('href', href);

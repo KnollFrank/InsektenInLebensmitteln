@@ -30,7 +30,6 @@ class ProductsViewActivity {
         InfoDialogController.configureDialog(this.#infoDialog);
         this.#withLoadedDataDo(
             ({ categoriesGraph, products, countries, lastUpdated, stores }) => {
-                // FK-FIXME: falls this.#country einen ungültigen Wert hat, dann verwende stattdessen CountryController.ALL_COUNTRIES
                 CountryController.configure(
                     {
                         countrySelectElement: this.#countrySelectElement,
@@ -82,7 +81,8 @@ class ProductsViewActivity {
                         new NodeView(
                             productsAndCategoriesView,
                             new ProductsAndCategoriesProvider(categoriesGraph),
-                            this.#categoryText));
+                            this.#categoryText),
+                        this.#prevBtn);
                 productsAndCategoriesView.setOnCategoryClicked(category => navigationController.gotoChildNode(category));
                 this.#prevBtn.addEventListener('click', _ => navigationController.gotoParentNode());
                 navigationController.gotoCurrentNode();

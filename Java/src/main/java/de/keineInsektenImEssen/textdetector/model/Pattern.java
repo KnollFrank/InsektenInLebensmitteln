@@ -7,7 +7,6 @@ import java.util.function.Predicate;
 public class Pattern {
 
     private final String name;
-    // FK-TODO: wie in Pattern.js einen regexp anstatt eines matcher verwenden.
     private final Predicate<String> matcher;
 
     public Pattern(final String name, final Predicate<String> matcher) {
