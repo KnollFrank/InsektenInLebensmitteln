@@ -54,7 +54,6 @@ FK-TODO:
 - Zeige standardmäßig Produkte für das Land in den Browsereinstellungen an: https://www.techighness.com/post/get-user-country-and-region-on-browser-with-javascript-only/
 - Wenn bei der Suche nichts gefunden wird, dann wie in der App den Text "nichts gefunden" oder so einblenden.
 NEXT-TODO:
-- Wenn es keine übergeordnete Kategorie gibt, dann den Back-Button disablen.
 - Deployment auf neuem Computer zum Laufen bringen.
 
 FK-FIXME:
