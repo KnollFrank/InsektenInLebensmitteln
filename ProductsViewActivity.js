@@ -59,6 +59,23 @@ class ProductsViewActivity {
         );
     }
 
+    #withLoadedDataDo(dataConsumer) {
+        Promise
+            .all(
+                [
+                    CategoriesGraphProvider.loadCategoriesGraph(`./data/${this.#country}/${this.#store}/categoriesGraph.json`),
+                    ProductsProvider.loadProducts(`./data/${this.#country}/${this.#store}/products.json`),
+                    fetch('./data/countries.json').then(response => response.json()),
+                    fetch('./data/lastUpdatedEpochMilli.json')
+                        .then(response => response.json())
+                        .then(lastUpdatedEpochMilli => new Date(lastUpdatedEpochMilli)),
+                    fetch(`./data/${this.#country}/stores.json`).then(response => response.json())
+                ])
+            .then(([categoriesGraph, products, countries, lastUpdated, stores]) => {
+                dataConsumer({ categoriesGraph, products, countries, lastUpdated, stores });
+            });
+    }
+
     static #reloadPageForCountryAndStore(country, store) {
         UrlUtils.loadPage(ProductsViewActivity.#getURLForCountryAndStore(country, store));
     }
@@ -106,34 +123,17 @@ class ProductsViewActivity {
             });
     }
 
-    #categoryAsNode(categoriesGraph) {
-        return Nodes.getNodeHavingDisplayName(
-            Graphs.getNodes(categoriesGraph),
-            this.#category);
-    }
-
-    #withLoadedDataDo(dataConsumer) {
-        Promise
-            .all(
-                [
-                    CategoriesGraphProvider.loadCategoriesGraph(`./data/${this.#country}/${this.#store}/categoriesGraph.json`),
-                    ProductsProvider.loadProducts(`./data/${this.#country}/${this.#store}/products.json`),
-                    fetch('./data/countries.json').then(response => response.json()),
-                    fetch('./data/lastUpdatedEpochMilli.json')
-                        .then(response => response.json())
-                        .then(lastUpdatedEpochMilli => new Date(lastUpdatedEpochMilli)),
-                    fetch(`./data/${this.#country}/stores.json`).then(response => response.json())
-                ])
-            .then(([categoriesGraph, products, countries, lastUpdated, stores]) => {
-                dataConsumer({ categoriesGraph, products, countries, lastUpdated, stores });
-            });
-    }
-
     #setInfosOfNodesAndContinue(productsHavingImage, nodes, continuation) {
         ProductsOfNodesSetter.setProductsOfNodes(productsHavingImage, nodes);
         DisplayNamesOfNodesSetter.setDisplayNamesOfNodesFromFileAndContinue(
             nodes,
             `./data/${this.#country}/${this.#store}/displayNameByName.json`,
             continuation);
+    }
+
+    #categoryAsNode(categoriesGraph) {
+        return Nodes.getNodeHavingDisplayName(
+            Graphs.getNodes(categoriesGraph),
+            this.#category);
     }
 }
