@@ -26,19 +26,21 @@ QUnit.module('DisplayNamesOfNodesSetterTest', function () {
         assert.equal(node.getDisplayName(), node.getName());
     });
 
-    QUnit.test('setDisplayNamesOfNodesFromFileAndContinue', function (assert) {
+    QUnit.test('setDisplayNamesOfNodesFromFile', function (assert) {
         // Given
         const node = new Node('en:plant-based-foods');
         const done = assert.async();
 
         // When
-        DisplayNamesOfNodesSetter.setDisplayNamesOfNodesFromFileAndContinue(
-            new Set([node]),
-            '/test/data/displayNameByName.json',
-            () => {
-                // Then
-                assert.equal(node.getDisplayName(), 'Pflanzliche Lebensmittel');
-                done();
-            });
+        DisplayNamesOfNodesSetter
+            .setDisplayNamesOfNodesFromFile(
+                new Set([node]),
+                '/test/data/displayNameByName.json')
+            .then(
+                () => {
+                    // Then
+                    assert.equal(node.getDisplayName(), 'Pflanzliche Lebensmittel');
+                    done();
+                });
     });
 });

@@ -1,10 +1,9 @@
 class DisplayNamesOfNodesSetter {
 
-    static setDisplayNamesOfNodesFromFileAndContinue(nodes, displayNameByNameFile, continuation) {
+    static setDisplayNamesOfNodesFromFile(nodes, displayNameByNameFile, continuation) {
         return fetch(displayNameByNameFile)
             .then(response => response.json())
-            .then(displayNameByName => DisplayNamesOfNodesSetter.setDisplayNamesOfNodes(nodes, displayNameByName))
-            .then(continuation);
+            .then(displayNameByName => DisplayNamesOfNodesSetter.setDisplayNamesOfNodes(nodes, displayNameByName));
     }
 
     static setDisplayNamesOfNodes(nodes, displayNameByName) {

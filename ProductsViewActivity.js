@@ -125,10 +125,11 @@ class ProductsViewActivity {
 
     #setInfosOfNodesAndContinue(productsHavingImage, nodes, continuation) {
         ProductsOfNodesSetter.setProductsOfNodes(productsHavingImage, nodes);
-        DisplayNamesOfNodesSetter.setDisplayNamesOfNodesFromFileAndContinue(
-            nodes,
-            `./data/${this.#country}/${this.#store}/displayNameByName.json`,
-            continuation);
+        DisplayNamesOfNodesSetter
+            .setDisplayNamesOfNodesFromFile(
+                nodes,
+                `./data/${this.#country}/${this.#store}/displayNameByName.json`)
+            .then(continuation);
     }
 
     #categoryAsNode(categoriesGraph) {
