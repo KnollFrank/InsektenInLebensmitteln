@@ -20,6 +20,7 @@ cp -t $dstDir/ \
    CategoriesView.js \
    ProductsViewActivity.js \
    Node.js \
+   Nodes.js \
    Navigation.js \
    CategoriesGraphProvider.js \
    ProductsProvider.js \

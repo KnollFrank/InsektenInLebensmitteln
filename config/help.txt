@@ -38,8 +38,6 @@ https://play.google.com/intl/en_us/badges/
 
 FK-TODO:
 - "E 120" und "E120" zu E120 in der Android-App normalisieren. Dito "E 904" und "E904" zu "E904" normalisieren.
-- Navigation zwischen Kategorien umsetzen wie hier: http://www.satraj.at/online-bestellen oder analog zur Android-App.
-  Verwende dazu auch https://developer.mozilla.org/en-US/docs/Web/API/History
 - Bei einem Produkt ohne Name, einen Standardname anzeigen, der angeklickt werden kann und zur OpenFoodFacts-Seite des Produktes führt.
   Oder das Produktbild anklickbar machen?
 - den Chatverlauf aus der Telegramgruppe https://t.me/ilblistgruppe exportieren und die darin befindlichen Produkte
@@ -53,6 +51,13 @@ FK-TODO:
 - Zeige standardmäßig Produkte für das Land in den Browsereinstellungen an: https://www.techighness.com/post/get-user-country-and-region-on-browser-with-javascript-only/
 - Wenn bei der Suche nichts gefunden wird, dann wie in der App den Text "nichts gefunden" oder so einblenden.
 NEXT-TODO:
+- Navigation zwischen Kategorien umsetzen wie hier: http://www.satraj.at/online-bestellen oder analog zur Android-App.
+  Verwende dazu auch https://developer.mozilla.org/en-US/docs/Web/API/History
+  https://knollfrank.github.io/InsektenInLebensmitteln/?country=Germany&store=All+Stores&category=Eggs
+  http://www.insekteninlebensmitteln.org/docs/index.html?country=Germany&store=All+Stores&category=Eggs
+  also: - country = Germany
+        - store = All+Stores
+        - category = Eggs
 - Deployment auf neuem Computer zum Laufen bringen.
 
 FK-FIXME:

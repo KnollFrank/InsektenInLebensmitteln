@@ -8,11 +8,12 @@ class ProductsViewActivity {
     #country;
     #storeSelectElement;
     #store;
+    #category;
     #searchUI;
     #overlay;
     #infoDialog;
 
-    constructor({ productsAndCategoriesContainer, categoryText, lastUpdated, prevBtn, countrySelectElement, country, storeSelectElement, store, searchUI, overlay, infoDialog }) {
+    constructor({ productsAndCategoriesContainer, categoryText, lastUpdated, prevBtn, countrySelectElement, country, storeSelectElement, store, category, searchUI, overlay, infoDialog }) {
         this.#productsAndCategoriesContainer = productsAndCategoriesContainer;
         this.#categoryText = categoryText;
         this.#lastUpdated = lastUpdated;
@@ -21,6 +22,7 @@ class ProductsViewActivity {
         this.#country = country;
         this.#storeSelectElement = storeSelectElement;
         this.#store = store;
+        this.#category = category;
         this.#searchUI = searchUI;
         this.#overlay = overlay;
         this.#infoDialog = infoDialog;
@@ -84,8 +86,8 @@ class ProductsViewActivity {
                             this.#categoryText),
                         this.#prevBtn);
                 productsAndCategoriesView.setOnCategoryClicked(category => navigationController.gotoChildNode(category));
+                navigationController.gotoChildNode(this.#categoryAsNode(categoriesGraph));
                 this.#prevBtn.addEventListener('click', _ => navigationController.gotoParentNode());
-                navigationController.gotoCurrentNode();
                 const searchController =
                     new SearchController(
                         this.#searchUI,
@@ -102,6 +104,12 @@ class ProductsViewActivity {
                         });
                 overlay.initialize();
             });
+    }
+
+    #categoryAsNode(categoriesGraph) {
+        return Nodes.getNodeHavingDisplayName(
+            Graphs.getNodes(categoriesGraph),
+            this.#category);
     }
 
     #withLoadedDataDo(dataConsumer) {
