@@ -54,7 +54,11 @@ class ProductsViewActivity {
                             month: 'long',
                             day: 'numeric'
                         });
-                this.#configure(categoriesGraph, products);
+                this
+                    .#configureNodes(
+                        products,
+                        Graphs.getNodes(categoriesGraph))
+                    .then(() => this.#configureUI(categoriesGraph, products));;
             }
         );
     }
@@ -87,49 +91,52 @@ class ProductsViewActivity {
         return parser.href;
     }
 
-    #configure(categoriesGraph, products) {
-        this.#setInfosOfNodesAndContinue(
-            products,
-            Graphs.getNodes(categoriesGraph),
-            () => {
-                const rootNode = categoriesGraph.getNodeAttributes(Graphs.getRootNode(categoriesGraph));
-                const productsAndCategoriesView = new ProductsAndCategoriesView(this.#productsAndCategoriesContainer);
-                const navigationController =
-                    new NavigationController(
-                        new Navigation(rootNode),
-                        new NodeView(
-                            productsAndCategoriesView,
-                            new ProductsAndCategoriesProvider(categoriesGraph),
-                            this.#categoryText),
-                        this.#prevBtn);
-                productsAndCategoriesView.setOnCategoryClicked(category => navigationController.gotoChildNode(category));
-                navigationController.gotoChildNode(this.#categoryAsNode(categoriesGraph));
-                this.#prevBtn.addEventListener('click', _ => navigationController.gotoParentNode());
-                const searchController =
-                    new SearchController(
-                        this.#searchUI,
-                        new ProductSearcher(products),
-                        new ProductsAndCategoriesView(this.#searchUI.productsContainer));
-                const overlay =
-                    new Overlay(
-                        {
-                            ...this.#overlay,
-                            onOpen: () => {
-                                searchController.reset();
-                            },
-                            onClose: () => { }
-                        });
-                overlay.initialize();
-            });
+    #configureNodes(productsHavingImage, nodes, continuation) {
+        ProductsOfNodesSetter.setProductsOfNodes(productsHavingImage, nodes);
+        return DisplayNamesOfNodesSetter.setDisplayNamesOfNodesFromFile(
+            nodes,
+            `./data/${this.#country}/${this.#store}/displayNameByName.json`);
     }
 
-    #setInfosOfNodesAndContinue(productsHavingImage, nodes, continuation) {
-        ProductsOfNodesSetter.setProductsOfNodes(productsHavingImage, nodes);
-        DisplayNamesOfNodesSetter
-            .setDisplayNamesOfNodesFromFile(
-                nodes,
-                `./data/${this.#country}/${this.#store}/displayNameByName.json`)
-            .then(continuation);
+    #configureUI(categoriesGraph, products) {
+        const productsAndCategoriesView = new ProductsAndCategoriesView(this.#productsAndCategoriesContainer);
+        const navigationController = this.#createNavigationController(categoriesGraph, productsAndCategoriesView);
+        productsAndCategoriesView.setOnCategoryClicked(category => navigationController.gotoChildNode(category));
+        navigationController.gotoChildNode(this.#categoryAsNode(categoriesGraph));
+        this.#prevBtn.addEventListener('click', _ => navigationController.gotoParentNode());
+        this.#initializeOverlay(products);
+    }
+
+    #createNavigationController(categoriesGraph, productsAndCategoriesView) {
+        return new NavigationController(
+            new Navigation(categoriesGraph.getNodeAttributes(Graphs.getRootNode(categoriesGraph))),
+            new NodeView(
+                productsAndCategoriesView,
+                new ProductsAndCategoriesProvider(categoriesGraph),
+                this.#categoryText),
+            this.#prevBtn);
+    }
+
+    #initializeOverlay(products) {
+        const overlay =
+            new Overlay(
+                {
+                    ...this.#overlay,
+                    onOpen: this.#createOnOpen(products),
+                    onClose: () => { }
+                });
+        overlay.initialize();
+    }
+
+    #createOnOpen(products) {
+        const searchController =
+            new SearchController(
+                this.#searchUI,
+                new ProductSearcher(products),
+                new ProductsAndCategoriesView(this.#searchUI.productsContainer));
+        return () => {
+            searchController.reset();
+        };
     }
 
     #categoryAsNode(categoriesGraph) {
