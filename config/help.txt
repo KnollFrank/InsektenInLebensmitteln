@@ -51,13 +51,6 @@ FK-TODO:
 - Zeige standardmäßig Produkte für das Land in den Browsereinstellungen an: https://www.techighness.com/post/get-user-country-and-region-on-browser-with-javascript-only/
 - Wenn bei der Suche nichts gefunden wird, dann wie in der App den Text "nichts gefunden" oder so einblenden.
 NEXT-TODO:
-- Navigation zwischen Kategorien umsetzen wie hier: http://www.satraj.at/online-bestellen oder analog zur Android-App.
-  Verwende dazu auch https://developer.mozilla.org/en-US/docs/Web/API/History
-  https://knollfrank.github.io/InsektenInLebensmitteln/?country=Germany&store=All+Stores&category=Eggs
-  http://www.insekteninlebensmitteln.org/docs/index.html?country=Germany&store=All+Stores&category=Eggs
-  also: - country = Germany
-        - store = All+Stores
-        - category = Eggs
 - Deployment auf neuem Computer zum Laufen bringen.
 
 FK-FIXME:
