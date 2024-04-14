@@ -17,13 +17,9 @@ class ProductsOfNodesSetter {
             [...product.categories_tags]
                 .map(
                     categories_tag =>
-                        ProductsOfNodesSetter.#getNodeNamed(
+                        Nodes.getNodeNamed(
                             nodes,
                             categories_tag)));
-    }
-
-    static #getNodeNamed(nodes, name) {
-        return Utils.getOnlyElement([...nodes].filter(node => name === node.getName()));
     }
 
     static #addProduct2EachNode(product, nodes) {

@@ -8,11 +8,12 @@ class ProductsViewActivity {
     #country;
     #storeSelectElement;
     #store;
+    #category;
     #searchUI;
     #overlay;
     #infoDialog;
 
-    constructor({ productsAndCategoriesContainer, categoryText, lastUpdated, prevBtn, countrySelectElement, country, storeSelectElement, store, searchUI, overlay, infoDialog }) {
+    constructor({ productsAndCategoriesContainer, categoryText, lastUpdated, prevBtn, countrySelectElement, country, storeSelectElement, store, category, searchUI, overlay, infoDialog }) {
         this.#productsAndCategoriesContainer = productsAndCategoriesContainer;
         this.#categoryText = categoryText;
         this.#lastUpdated = lastUpdated;
@@ -21,6 +22,7 @@ class ProductsViewActivity {
         this.#country = country;
         this.#storeSelectElement = storeSelectElement;
         this.#store = store;
+        this.#category = category;
         this.#searchUI = searchUI;
         this.#overlay = overlay;
         this.#infoDialog = infoDialog;
@@ -52,56 +54,13 @@ class ProductsViewActivity {
                             month: 'long',
                             day: 'numeric'
                         });
-                this.#configure(categoriesGraph, products);
+                this
+                    .#configureNodes(
+                        products,
+                        Graphs.getNodes(categoriesGraph))
+                    .then(() => this.#configureUI(categoriesGraph, products));;
             }
         );
-    }
-
-    static #reloadPageForCountryAndStore(country, store) {
-        UrlUtils.loadPage(ProductsViewActivity.#getURLForCountryAndStore(country, store));
-    }
-
-    static #getURLForCountryAndStore(country, store) {
-        const parser = new URL(window.location);
-        parser.searchParams.set('country', country);
-        parser.searchParams.set('store', store);
-        return parser.href;
-    }
-
-    #configure(categoriesGraph, products) {
-        this.#setInfosOfNodesAndContinue(
-            products,
-            Graphs.getNodes(categoriesGraph),
-            () => {
-                const rootNode = categoriesGraph.getNodeAttributes(Graphs.getRootNode(categoriesGraph));
-                const productsAndCategoriesView = new ProductsAndCategoriesView(this.#productsAndCategoriesContainer);
-                const navigationController =
-                    new NavigationController(
-                        new Navigation(rootNode),
-                        new NodeView(
-                            productsAndCategoriesView,
-                            new ProductsAndCategoriesProvider(categoriesGraph),
-                            this.#categoryText),
-                        this.#prevBtn);
-                productsAndCategoriesView.setOnCategoryClicked(category => navigationController.gotoChildNode(category));
-                this.#prevBtn.addEventListener('click', _ => navigationController.gotoParentNode());
-                navigationController.gotoCurrentNode();
-                const searchController =
-                    new SearchController(
-                        this.#searchUI,
-                        new ProductSearcher(products),
-                        new ProductsAndCategoriesView(this.#searchUI.productsContainer));
-                const overlay =
-                    new Overlay(
-                        {
-                            ...this.#overlay,
-                            onOpen: () => {
-                                searchController.reset();
-                            },
-                            onClose: () => { }
-                        });
-                overlay.initialize();
-            });
     }
 
     #withLoadedDataDo(dataConsumer) {
@@ -121,11 +80,68 @@ class ProductsViewActivity {
             });
     }
 
-    #setInfosOfNodesAndContinue(productsHavingImage, nodes, continuation) {
+    static #reloadPageForCountryAndStore(country, store) {
+        UrlUtils.loadPage(ProductsViewActivity.#getURLForCountryAndStore(country, store));
+    }
+
+    static #getURLForCountryAndStore(country, store) {
+        const parser = new URL(window.location);
+        parser.searchParams.set('country', country);
+        parser.searchParams.set('store', store);
+        return parser.href;
+    }
+
+    #configureNodes(productsHavingImage, nodes, continuation) {
         ProductsOfNodesSetter.setProductsOfNodes(productsHavingImage, nodes);
-        DisplayNamesOfNodesSetter.setDisplayNamesOfNodesFromFileAndContinue(
+        return DisplayNamesOfNodesSetter.setDisplayNamesOfNodesFromFile(
             nodes,
-            `./data/${this.#country}/${this.#store}/displayNameByName.json`,
-            continuation);
+            `./data/${this.#country}/${this.#store}/displayNameByName.json`);
+    }
+
+    #configureUI(categoriesGraph, products) {
+        const productsAndCategoriesView = new ProductsAndCategoriesView(this.#productsAndCategoriesContainer);
+        const navigationController = this.#createNavigationController(categoriesGraph, productsAndCategoriesView);
+        productsAndCategoriesView.setOnCategoryClicked(category => navigationController.gotoChildNode(category));
+        navigationController.gotoChildNode(this.#categoryAsNode(categoriesGraph));
+        this.#prevBtn.addEventListener('click', _ => navigationController.gotoParentNode());
+        this.#initializeOverlay(products);
+    }
+
+    #createNavigationController(categoriesGraph, productsAndCategoriesView) {
+        return new NavigationController(
+            new Navigation(categoriesGraph.getNodeAttributes(Graphs.getRootNode(categoriesGraph))),
+            new NodeView(
+                productsAndCategoriesView,
+                new ProductsAndCategoriesProvider(categoriesGraph),
+                this.#categoryText),
+            this.#prevBtn);
+    }
+
+    #initializeOverlay(products) {
+        const overlay =
+            new Overlay(
+                {
+                    ...this.#overlay,
+                    onOpen: this.#createOnOpen(products),
+                    onClose: () => { }
+                });
+        overlay.initialize();
+    }
+
+    #createOnOpen(products) {
+        const searchController =
+            new SearchController(
+                this.#searchUI,
+                new ProductSearcher(products),
+                new ProductsAndCategoriesView(this.#searchUI.productsContainer));
+        return () => {
+            searchController.reset();
+        };
+    }
+
+    #categoryAsNode(categoriesGraph) {
+        return Nodes.getNodeHavingDisplayName(
+            Graphs.getNodes(categoriesGraph),
+            this.#category);
     }
 }
