@@ -1,4 +1,3 @@
-// FK-TODO: make CategoryCardView a custom html element. See https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements
 class CategoryCardViewFactory {
 
     static createCategoryCardView(category, onCategoryClicked) {
