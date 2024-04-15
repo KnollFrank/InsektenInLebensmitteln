@@ -4,14 +4,11 @@ QUnit.module('NavigationTest', function () {
         const navigation = new Navigation('root');
         assert.equal(navigation.getCurrentNode(), 'root');
 
-        navigation.gotoParentNodeIfExists();
-        assert.equal(navigation.getCurrentNode(), 'root');
-
-        navigation.gotoChildNode('someChild');
-        assert.equal(navigation.getCurrentNode(), 'someChild');
+        navigation.gotoChildNode('someChild', 4711);
+        assert.deepEqual(navigation.getCurrentNode(), { node: 'someChild', scrollTop: 4711 });
         assert.equal(navigation.getParentNode(), 'root');
 
-        navigation.gotoParentNodeIfExists();
+        navigation.gotoParentNode();
         assert.equal(navigation.getCurrentNode(), 'root');
     });
 });

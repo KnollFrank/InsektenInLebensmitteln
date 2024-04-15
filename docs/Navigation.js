@@ -19,7 +19,6 @@ class Navigation {
     }
 
     gotoParentNode() {
-        // FK-TODO: refactor
         const parent = this.getParentNode();
         const current = this.getCurrentNode();
         this.#nodes.pop();
