@@ -14,15 +14,16 @@ class Navigation {
         return this.#nodes.at(-2);
     }
 
-    gotoChildNode(child) {
-        this.#nodes.push(child);
+    gotoChildNode(child, scrollTop) {
+        this.#nodes.push({ node: child, scrollTop });
     }
 
-    gotoParentNodeIfExists() {
-        if (this.hasParentNode()) {
-            this.#nodes.pop();
-        }
-        return this.getCurrentNode();
+    gotoParentNode() {
+        // FK-TODO: refactor
+        const parent = this.getParentNode();
+        const current = this.getCurrentNode();
+        this.#nodes.pop();
+        return { parent: parent.node, scrollTop: current.scrollTop };
     }
 
     hasParentNode() {

@@ -3,31 +3,29 @@ class NavigationController {
     #navigation;
     #nodeView;
     #prevBtn;
+    #getScrollTop;
+    #setScrollTop;
 
-    constructor(navigation, nodeView, prevBtn) {
+    constructor(navigation, nodeView, prevBtn, getScrollTop, setScrollTop) {
         this.#navigation = navigation;
         this.#nodeView = nodeView;
         this.#prevBtn = prevBtn;
-    }
-
-    gotoCurrentNode() {
-        this.#nodeView.displayNode(this.#navigation.getCurrentNode());
-        this.#enableOrDisablePrevBtn();
-        // FK-TODO: brauchen ein "recyclerViewOrTextView.recyclerView.scrollToPosition(getPositionOfCurrentNodeWithinParentNode());"
+        this.#getScrollTop = getScrollTop;
+        this.#setScrollTop = setScrollTop;
     }
 
     gotoChildNode(child) {
-        this.#navigation.gotoChildNode(child);
+        this.#navigation.gotoChildNode(child, this.#getScrollTop());
         this.#nodeView.displayNode(child);
         this.#enableOrDisablePrevBtn();
-        // FK-TODO: brauchen ein "recyclerViewOrTextView.recyclerView.scrollToPosition(0);"
+        this.#setScrollTop(0);
     }
 
     gotoParentNode() {
-        const parent = this.#navigation.gotoParentNodeIfExists();
+        const { parent, scrollTop } = this.#navigation.gotoParentNode();
         this.#nodeView.displayNode(parent);
         this.#enableOrDisablePrevBtn();
-        // FK-TODO: brauchen ein "recyclerViewOrTextView.recyclerView.scrollToPosition(position);"
+        this.#setScrollTop(scrollTop);
     }
 
     #enableOrDisablePrevBtn() {

@@ -12,9 +12,13 @@ class ProductsViewActivity {
     #searchUI;
     #overlay;
     #infoDialog;
+    #getScrollTop;
+    #setScrollTop;
 
-    constructor({ productsAndCategoriesContainer, categoryText, lastUpdated, prevBtn, countrySelectElement, country, storeSelectElement, store, category, searchUI, overlay, infoDialog }) {
+    constructor({ productsAndCategoriesContainer, getScrollTop, setScrollTop, categoryText, lastUpdated, prevBtn, countrySelectElement, country, storeSelectElement, store, category, searchUI, overlay, infoDialog }) {
         this.#productsAndCategoriesContainer = productsAndCategoriesContainer;
+        this.#getScrollTop = getScrollTop;
+        this.#setScrollTop = setScrollTop;
         this.#categoryText = categoryText;
         this.#lastUpdated = lastUpdated;
         this.#prevBtn = prevBtn;
@@ -101,9 +105,11 @@ class ProductsViewActivity {
     #configureUI(categoriesGraph, products) {
         const productsAndCategoriesView = new ProductsAndCategoriesView(this.#productsAndCategoriesContainer);
         const navigationController = this.#createNavigationController(categoriesGraph, productsAndCategoriesView);
-        productsAndCategoriesView.setOnCategoryClicked(category => navigationController.gotoChildNode(category));
+        {
+            productsAndCategoriesView.setOnCategoryClicked(category => navigationController.gotoChildNode(category));
+            this.#prevBtn.addEventListener('click', _ => navigationController.gotoParentNode());
+        }
         navigationController.gotoChildNode(this.#categoryAsNode(categoriesGraph));
-        this.#prevBtn.addEventListener('click', _ => navigationController.gotoParentNode());
         this.#initializeOverlay(products);
     }
 
@@ -114,7 +120,9 @@ class ProductsViewActivity {
                 productsAndCategoriesView,
                 new ProductsAndCategoriesProvider(categoriesGraph),
                 this.#categoryText),
-            this.#prevBtn);
+            this.#prevBtn,
+            this.#getScrollTop,
+            this.#setScrollTop);
     }
 
     #initializeOverlay(products) {
