@@ -115,7 +115,7 @@ class ProductsViewActivity {
 
     #createNavigationController(categoriesGraph, productsAndCategoriesView) {
         return new NavigationController(
-            new Navigation(categoriesGraph.getNodeAttributes(Graphs.getRootNode(categoriesGraph))),
+            new Navigation(),
             new NodeView(
                 productsAndCategoriesView,
                 new ProductsAndCategoriesProvider(categoriesGraph),

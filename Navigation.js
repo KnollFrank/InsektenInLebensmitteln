@@ -2,8 +2,8 @@ class Navigation {
 
     #nodes;
 
-    constructor(rootNode) {
-        this.#nodes = [rootNode];
+    constructor() {
+        this.#nodes = [{ node: undefined, scrollTop: undefined }];
     }
 
     getCurrentNode() {
@@ -14,15 +14,14 @@ class Navigation {
         return this.#nodes.at(-2);
     }
 
-    gotoChildNode(child, scrollTop) {
-        this.#nodes.push({ node: child, scrollTop });
+    gotoChildNode({ child, scrollTopWithinParentOfChild }) {
+        const parentOfChild = this.getCurrentNode();
+        parentOfChild.scrollTop = scrollTopWithinParentOfChild;
+        this.#nodes.push({ node: child, scrollTop: undefined });
     }
 
     gotoParentNode() {
-        const parent = this.getParentNode();
-        const current = this.getCurrentNode();
         this.#nodes.pop();
-        return { parent: parent.node, scrollTop: current.scrollTop };
     }
 
     hasParentNode() {

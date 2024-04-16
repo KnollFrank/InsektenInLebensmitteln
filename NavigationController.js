@@ -15,14 +15,15 @@ class NavigationController {
     }
 
     gotoChildNode(child) {
-        this.#navigation.gotoChildNode(child, this.#getScrollTop());
+        this.#navigation.gotoChildNode({ child: child, scrollTopWithinParentOfChild: this.#getScrollTop() });
         this.#nodeView.displayNode(child);
         this.#enableOrDisablePrevBtn();
         this.#setScrollTop(0);
     }
 
     gotoParentNode() {
-        const { parent, scrollTop } = this.#navigation.gotoParentNode();
+        this.#navigation.gotoParentNode();
+        const { node: parent, scrollTop } = this.#navigation.getCurrentNode();
         this.#nodeView.displayNode(parent);
         this.#enableOrDisablePrevBtn();
         this.#setScrollTop(scrollTop);
