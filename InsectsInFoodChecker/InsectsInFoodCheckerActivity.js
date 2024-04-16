@@ -41,11 +41,21 @@ class InsectsInFoodCheckerActivity {
     }
 
     #displayIngredientsWithInsectsList() {
-        this.#ingredientsWithInsectsList.innerText =
-            UnwantedIngredientsPatternsFactory
-                .getUnwantedIngredientsPatterns()
-                .map(pattern => pattern.name)
-                .join(', ');
+        this.#ingredientsWithInsectsList.innerHTML =
+            UIUtils.asHtmlUL(this.#getSynonymousIngredientsList());
+    }
+
+    #getSynonymousIngredientsList() {
+        return UnwantedIngredientsProvider
+            .getSynonyms()
+            .map(synonym => this.#getSynonymousIngredients(synonym));
+    }
+
+    #getSynonymousIngredients(synonym) {
+        return synonym
+            .patterns
+            .map(pattern => pattern.name)
+            .join(', ');
     }
 
     #configureIngredientsForm() {

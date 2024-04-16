@@ -3,14 +3,13 @@ QUnit.module('PatternsTest', function () {
     QUnit.test('shouldfindAllMatches', function (assert) {
         // Given
         const patterns =
-            new Patterns(
-                [
-                    new Pattern('Schellack', /Schellack/gi),
-                    new Pattern('E120', /E120/g)
-                ]);
+            [
+                new Pattern('Schellack', /Schellack/gi),
+                new Pattern('E120', /E120/g)
+            ];
 
         // When
-        const matches = patterns.findAllMatches('SchelLACK, Zucker, E120');
+        const matches = Patterns.findAllMatches(patterns, 'SchelLACK, Zucker, E120');
 
         // Then
         assert.deepEqual(
@@ -31,11 +30,10 @@ QUnit.module('PatternsTest', function () {
 
     QUnit.test('test_findAllMatches_multipleOccurences', function (assert) {
         // Given
-        const patterns =
-            new Patterns([new Pattern('E120', /E120/g)]);
+        const patterns = [new Pattern('E120', /E120/g)];
 
         // When
-        const matches = patterns.findAllMatches('E120, Zucker, E120');
+        const matches = Patterns.findAllMatches(patterns, 'E120, Zucker, E120');
 
         // Then
         assert.deepEqual(
@@ -57,13 +55,12 @@ QUnit.module('PatternsTest', function () {
     QUnit.test('shouldfindAllMatches2', function (assert) {
         // Given
         const patterns =
-            new Patterns(
-                [
-                    new Pattern('Alphitobius diaperinus', /Alphitobius\s+diaperinus/g)
-                ]);
+            [
+                new Pattern('Alphitobius diaperinus', /Alphitobius\s+diaperinus/g)
+            ];
 
         // When
-        const matches = patterns.findAllMatches('Alphitobius    diaperinus');
+        const matches = Patterns.findAllMatches(patterns, 'Alphitobius    diaperinus');
 
         // Then
         assert.deepEqual(

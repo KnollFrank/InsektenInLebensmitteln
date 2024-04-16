@@ -35,4 +35,14 @@ class UIUtils {
     static hide(element) {
         element.style.display = "none";
     }
+
+    static asHtmlUL(elements) {
+        return `<ul>${UIUtils.#asHtmlLIs(elements)}</ul>`;
+    }
+
+    static #asHtmlLIs(elements) {
+        return elements
+            .map(element => `<li>${element}</li>`)
+            .join('');
+    }
 }
