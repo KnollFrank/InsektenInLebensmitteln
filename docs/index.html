@@ -54,10 +54,13 @@
             'DOMContentLoaded',
             event => {
                 const urlSearchParams = new URLSearchParams(window.location.search);
+                const scroller = document.querySelector('.body');
                 const productsViewActivity =
                     new ProductsViewActivity(
                         {
                             productsAndCategoriesContainer: document.querySelector('#productsAndCategories'),
+                            getScrollTop: () => scroller.scrollTop,
+                            setScrollTop: scrollTop => scroller.scrollTop = scrollTop,
                             categoryText: document.querySelector('#categoryText'),
                             lastUpdated: document.querySelector('#lastUpdated'),
                             prevBtn: document.querySelector('#prevBtn'),

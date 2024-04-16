@@ -18,7 +18,7 @@ sudo a2enmod headers
 apache2ctl -M | grep headers
 
 /etc/apache2/apache2.conf:
-<Directory /home/frankknoll/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/>
+<Directory /home/frank/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/>
         Options Indexes FollowSymLinks
         AllowOverride None
         Require all granted
@@ -51,7 +51,6 @@ FK-TODO:
 - Zeige standardmäßig Produkte für das Land in den Browsereinstellungen an: https://www.techighness.com/post/get-user-country-and-region-on-browser-with-javascript-only/
 - Wenn bei der Suche nichts gefunden wird, dann wie in der App den Text "nichts gefunden" oder so einblenden.
 NEXT-TODO:
-- Deployment auf neuem Computer zum Laufen bringen.
 
 FK-FIXME:
 
@@ -59,16 +58,16 @@ Veröffentlichung auf https://knollfrank.github.io/InsektenInLebensmitteln/
 A. GitHub Action .github/workflows/buildAndDeployWebsite.yml auf github ausführen, oder
 B.
    1. Downloading Open Food Facts Database:
-     cd /home/frankknoll/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/Java/tmp
+     cd /home/frank/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/Java/tmp
      wget --retry-connrefused --read-timeout=20 --timeout=15 --tries=0 --continue https://static.openfoodfacts.org/data/en.openfoodfacts.org.products.csv.gz
      gunzip en.openfoodfacts.org.products.csv.gz
    2. Running DataPreparation:
-     cd /home/frankknoll/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/Java
+     cd /home/frank/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/Java
      ./gradlew run \
-       --args="-openFoodFactsDatabase /home/frankknoll/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/Java/tmp/en.openfoodfacts.org.products.csv \
-               -webAppDataDirectory /home/frankknoll/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/data \
-               -tmpDir /home/frankknoll/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/Java/tmp"
+       --args="-openFoodFactsDatabase /home/frank/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/Java/tmp/en.openfoodfacts.org.products.csv \
+               -webAppDataDirectory /home/frank/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/data \
+               -tmpDir /home/frank/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/Java/tmp"
    3. Publishing Website:
-     cd /home/frankknoll/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/config
-     ./publishAll.sh /home/frankknoll/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/docs
+     cd /home/frank/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/config
+     ./publishAll.sh /home/frank/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/docs
    4. git push
