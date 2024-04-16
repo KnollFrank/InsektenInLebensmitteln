@@ -3,7 +3,7 @@ class Navigation {
     #nodes;
 
     constructor() {
-        this.#nodes = [{ node: undefined, scrollTop: undefined }];
+        this.#nodes = [];
     }
 
     getCurrentNode() {
@@ -16,7 +16,9 @@ class Navigation {
 
     gotoChildNode({ child, scrollTopWithinParentOfChild }) {
         const parentOfChild = this.getCurrentNode();
-        parentOfChild.scrollTop = scrollTopWithinParentOfChild;
+        if (parentOfChild !== undefined) {
+            parentOfChild.scrollTop = scrollTopWithinParentOfChild;
+        }
         this.#nodes.push({ node: child, scrollTop: undefined });
     }
 
