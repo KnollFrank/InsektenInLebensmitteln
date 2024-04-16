@@ -1,11 +1,11 @@
 class IngredientsWithInsectsFinder {
 
     #spellingCorrector;
-    #unwantedIngredientsPatterns;
+    #unwantedIngredientsSynonyms;
 
     constructor() {
         this.#spellingCorrector = new SpellingCorrector();
-        this.#unwantedIngredientsPatterns = UnwantedIngredientsPatternsFactory.createUnwantedIngredientsPatterns();
+        this.#unwantedIngredientsSynonyms = UnwantedIngredientsProvider.getSynonyms();
     }
 
     findIngredientsWithInsects(ingredients) {
@@ -20,7 +20,7 @@ class IngredientsWithInsectsFinder {
         } = this.#spellingCorrector.correctText(normalizedIngredients);
 
         return {
-            matches: this.#unwantedIngredientsPatterns.findAllMatches(correctedNormalizedIngredients),
+            matches: Synonyms.findAllMatches(this.#unwantedIngredientsSynonyms, correctedNormalizedIngredients),
             indexMapper: IndexMapper.combineIndexMappings(normalizedTextIndex2TextIndex, correctedTextIndex2TextIndex)
         };
     }

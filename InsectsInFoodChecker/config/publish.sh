@@ -21,7 +21,9 @@ cp -t $dstDir/ \
    ./UnaryFunctionCache.js \
    ./Pattern.js \
    ./Patterns.js \
-   ./UnwantedIngredientsPatternsFactory.js \
+   ./Synonym.js \
+   ./Synonyms.js \
+   ./UnwantedIngredientsProvider.js \
    ./TextNormalizer.js \
    ./IndexMapper.js \
    ./WordWithinTextFinder.js \

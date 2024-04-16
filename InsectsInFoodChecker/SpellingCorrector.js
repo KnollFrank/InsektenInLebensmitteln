@@ -1,7 +1,7 @@
 class SpellingCorrector {
 
     constructor() {
-        // FK-TODO: synchronize frequencyByWord partly with UnwantedIngredientsFinderFactory.getUnwantedIngredientsPatterns(), neglect short words like E120
+        // FK-TODO: synchronize frequencyByWord partly with UnwantedIngredientsFinderFactory.getSynonyms(), neglect short words like E120
         const frequencyByWord = {
             "Zutaten": 1,
             "Schildlaus": 1,
