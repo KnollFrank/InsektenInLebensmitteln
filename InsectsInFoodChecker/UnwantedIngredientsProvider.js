@@ -1,5 +1,6 @@
 class UnwantedIngredientsProvider {
 
+    // FK-TODO: replace method with static variable
     static getSynonyms() {
         return [
             new Synonym(

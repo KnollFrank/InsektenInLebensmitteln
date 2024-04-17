@@ -1,8 +1,7 @@
 package de.keineInsektenImEssen.dataPreparation;
 
 import com.google.common.collect.Streams;
-import de.keineInsektenImEssen.textdetector.model.Pattern;
-import de.keineInsektenImEssen.textdetector.service.UnwantedIngredientsPatternsFactory;
+import de.keineInsektenImEssen.textdetector.service.UnwantedIngredientsProvider;
 import org.apache.commons.csv.CSVRecord;
 
 import java.util.List;
@@ -42,11 +41,12 @@ class ProductsFactory {
     }
 
     public static Set<String> getUnwantedIngredients(final String haystack) {
-        return UnwantedIngredientsPatternsFactory
-                .unwantedIngredientsPatterns
+        return UnwantedIngredientsProvider
+                .unwantedIngredients
                 .stream()
-                .filter(unwantedIngredient -> unwantedIngredient.getMatcher().test(haystack))
-                .map(Pattern::getName)
+                .flatMap(unwantedIngredient -> unwantedIngredient.patterns.stream())
+                .filter(unwantedIngredient -> unwantedIngredient.matcher.test(haystack))
+                .map(pattern -> pattern.name)
                 .collect(Collectors.toSet());
     }
 }

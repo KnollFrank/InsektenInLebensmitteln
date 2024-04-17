@@ -4,22 +4,15 @@ import java.util.Objects;
 import java.util.StringJoiner;
 import java.util.function.Predicate;
 
+// FK-TODO: convert to record class
 public class Pattern {
 
-    private final String name;
-    private final Predicate<String> matcher;
+    public final String name;
+    public final Predicate<String> matcher;
 
     public Pattern(final String name, final Predicate<String> matcher) {
         this.name = name;
         this.matcher = matcher;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public Predicate<String> getMatcher() {
-        return matcher;
     }
 
     @Override
