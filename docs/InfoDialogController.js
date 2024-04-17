@@ -5,21 +5,16 @@ class InfoDialogController {
             openButton,
             dialogElement,
             ingredientsWithInsectsList,
-            showSupportSection,
-            // FK-TODO: remove showAndroidAppSection
-            showAndroidAppSection
+            showSupportSection
         }) {
-        InfoDialogController.#configureSections({ dialogElement, ingredientsWithInsectsList, showSupportSection, showAndroidAppSection });
+        InfoDialogController.#configureSections({ dialogElement, ingredientsWithInsectsList, showSupportSection });
         openButton.addEventListener('click', () => dialogElement.showModal());
     }
 
-    static #configureSections({ dialogElement, ingredientsWithInsectsList, showSupportSection, showAndroidAppSection }) {
+    static #configureSections({ dialogElement, ingredientsWithInsectsList, showSupportSection }) {
         ingredientsWithInsectsList.innerHTML = IngredientsWithInsectsHtmlProvider.getIngredientsWithInsectsHtml();
         if (!showSupportSection) {
             UIUtils.hide(dialogElement.querySelector('#Support'));
-        }
-        if (!showAndroidAppSection) {
-            UIUtils.hide(dialogElement.querySelector('#AndroidApp'));
         }
     }
 }
