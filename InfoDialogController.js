@@ -1,20 +1,7 @@
 class InfoDialogController {
 
-    static configureDialog(
-        {
-            openButton,
-            dialogElement,
-            ingredientsWithInsectsList,
-            showSupportSection
-        }) {
-        InfoDialogController.#configureSections({ dialogElement, ingredientsWithInsectsList, showSupportSection });
-        openButton.addEventListener('click', () => dialogElement.showModal());
-    }
-
-    static #configureSections({ dialogElement, ingredientsWithInsectsList, showSupportSection }) {
+    static configureDialog({ openButton, dialogElement, ingredientsWithInsectsList }) {
         ingredientsWithInsectsList.innerHTML = IngredientsWithInsectsHtmlProvider.getIngredientsWithInsectsHtml();
-        if (!showSupportSection) {
-            UIUtils.hide(dialogElement.querySelector('#Support'));
-        }
+        openButton.addEventListener('click', () => dialogElement.showModal());
     }
 }
