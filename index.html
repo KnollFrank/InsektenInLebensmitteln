@@ -76,7 +76,8 @@
                             searchUI: {
                                 form: document.querySelector('#searchform'),
                                 input: document.querySelector('#searchInput'),
-                                productsContainer: document.querySelector('#productsSearch')
+                                productsContainer: document.querySelector('#searchProductsResults'),
+                                noSearchResults: document.querySelector('#noSearchProductsResults')
                             },
                             overlay: {
                                 openButton: document.querySelector('#openSearchButton'),
@@ -146,7 +147,8 @@
             </div>
 
             <div class="body">
-                <div id="productsSearch"></div>
+                <div id="searchProductsResults"></div>
+                <div id="noSearchProductsResults" class="centered">Product or Brand not found</div>
             </div>
         </div>
     </div>

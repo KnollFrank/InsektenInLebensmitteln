@@ -49,7 +49,6 @@ FK-TODO:
 - Neue E-Mail-Adresse einrichten und im InfoDialog für Feedback der Benutzer angeben.
 - Google Analytics verfeinern: Suche und Suchbegriff, Länderauswahl, ... mitprotokollieren.
 - Zeige standardmäßig Produkte für das Land in den Browsereinstellungen an: https://www.techighness.com/post/get-user-country-and-region-on-browser-with-javascript-only/
-- Wenn bei der Suche nichts gefunden wird, dann wie in der App den Text "nichts gefunden" oder so einblenden.
 NEXT-TODO:
 
 FK-FIXME:
