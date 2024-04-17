@@ -30,6 +30,7 @@ cp -t $dstDir/ \
    ./SpellingCorrector.js \
    ./HighlightWithinTextarea.js \
    ./IngredientsWithInsectsFinder.js \
+   ./IngredientsWithInsectsHtmlProvider.js \
    ./InsectsInFoodCheckerActivity.js
 mkdir -p $dstDir/css/
 cp css/style.css $dstDir/css/

@@ -1,6 +1,13 @@
 class InfoDialogController {
 
-    static configureDialog({ openButton, dialogElement, showSupportSection, showAndroidAppSection }) {
+    static configureDialog(
+        {
+            openButton,
+            dialogElement,
+            ingredientsWithInsectsList,
+            showSupportSection,
+            showAndroidAppSection
+        }) {
         InfoDialogController.#configureSections({ dialogElement, showSupportSection, showAndroidAppSection });
         openButton.addEventListener('click', () => dialogElement.showModal());
     }
