@@ -5,6 +5,7 @@ import de.keineInsektenImEssen.textdetector.model.Pattern;
 import de.keineInsektenImEssen.textdetector.model.Synonym;
 
 import java.util.Arrays;
+import java.util.Set;
 
 import static de.keineInsektenImEssen.textdetector.service.MatcherFactory.contains;
 import static de.keineInsektenImEssen.textdetector.service.MatcherFactory.containsIgnoreCase;
@@ -14,7 +15,7 @@ public class UnwantedIngredientsProvider {
     // FK-TODO: zu jedem der folgenden unerwünschten Zutaten in openfoodfacts ein Beispielprodukt suchen und die JSON-Antwort auf unerwünschte Zutaten korrekt parsen (siehe https://de.openfoodfacts.org/cgi/search.pl?action=display&tagtype_0=ingredients&tag_contains_0=contains&tag_0=KARMIN&sort_by=unique_scans_n&page_size=20)
 
     // FK-TODO: die unwantedIngredients in der App in einem Dialog als Liste anzeigen, damit der Benutzer weiß, welche Insektenzutaten die App überhaupt erkennt.
-    public static final ImmutableSet<Synonym> unwantedIngredients =
+    public static final Set<Synonym> unwantedIngredients =
             ImmutableSet.of(
                     new Synonym(
                             "E120",
