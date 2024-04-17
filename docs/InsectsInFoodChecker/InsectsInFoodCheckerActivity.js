@@ -47,7 +47,7 @@ class InsectsInFoodCheckerActivity {
 
     #getSynonymousIngredientsList() {
         return UnwantedIngredientsProvider
-            .getSynonyms()
+            .synonyms
             .map(synonym => this.#getSynonymousIngredients(synonym));
     }
 

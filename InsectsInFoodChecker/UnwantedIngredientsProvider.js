@@ -1,8 +1,7 @@
 class UnwantedIngredientsProvider {
 
-    // FK-TODO: replace method with static variable
-    static getSynonyms() {
-        return [
+    static synonyms =
+        [
             new Synonym(
                 'E120',
                 [
@@ -43,5 +42,4 @@ class UnwantedIngredientsProvider {
                     new Pattern('Getreideschimmelkäfer', /Getreideschimmelkäfer/gi)
                 ])
         ];
-    }
 }
