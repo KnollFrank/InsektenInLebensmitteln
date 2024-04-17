@@ -49,6 +49,10 @@
     <script src="./StoreController.js"></script>
     <script src="./SelectController.js"></script>
     <script src="./ProductFilter.js"></script>
+    <script src="./InsectsInFoodChecker/IngredientsWithInsectsHtmlProvider.js"></script>
+    <script src="./InsectsInFoodChecker/Pattern.js"></script>
+    <script src="./InsectsInFoodChecker/Synonym.js"></script>
+    <script src="./InsectsInFoodChecker/UnwantedIngredientsProvider.js"></script>
     <script>
         document.addEventListener(
             'DOMContentLoaded',
@@ -82,8 +86,7 @@
                             infoDialog: {
                                 openButton: document.querySelector('#showInfoDialog'),
                                 dialogElement: document.querySelector('#infoDialog'),
-                                showSupportSection: !UrlUtils.isSearchParamNO(urlSearchParams, 'showSupportSection'),
-                                showAndroidAppSection: !UrlUtils.isSearchParamNO(urlSearchParams, 'showAndroidAppSection')
+                                ingredientsWithInsectsList: document.querySelector('#ingredientsWithInsectsList')
                             }
                         }
                     );
@@ -151,6 +154,12 @@
     <dialog id="infoDialog">
         <div class="dialog">
             <div class="dialog-content">
+                <section>
+                    <h1>Ingredients containing Insects</h1>
+                    <p>
+                        <span id="ingredientsWithInsectsList"></span>
+                    </p>
+                </section>
                 <section id="Support">
                     <h1>Support</h1>
                     <div>

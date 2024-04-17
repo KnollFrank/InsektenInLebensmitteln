@@ -4,23 +4,7 @@ import java.util.Objects;
 import java.util.StringJoiner;
 import java.util.function.Predicate;
 
-public class Pattern {
-
-    private final String name;
-    private final Predicate<String> matcher;
-
-    public Pattern(final String name, final Predicate<String> matcher) {
-        this.name = name;
-        this.matcher = matcher;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public Predicate<String> getMatcher() {
-        return matcher;
-    }
+public record Pattern(String name, Predicate<String> matcher) {
 
     @Override
     public String toString() {

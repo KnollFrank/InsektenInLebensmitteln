@@ -2,7 +2,7 @@ QUnit.module('UnwantedIngredientsProviderTest', function () {
 
     QUnit.test('shouldfindAllMatches', function (assert) {
         // Given
-        const unwantedIngredientsSynonyms = UnwantedIngredientsProvider.getSynonyms();
+        const unwantedIngredientsSynonyms = UnwantedIngredientsProvider.synonyms;
 
         // When
         const matches =

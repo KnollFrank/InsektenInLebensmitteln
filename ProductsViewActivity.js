@@ -15,7 +15,23 @@ class ProductsViewActivity {
     #getScrollTop;
     #setScrollTop;
 
-    constructor({ productsAndCategoriesContainer, getScrollTop, setScrollTop, categoryText, lastUpdated, prevBtn, countrySelectElement, country, storeSelectElement, store, category, searchUI, overlay, infoDialog }) {
+    constructor(
+        {
+            productsAndCategoriesContainer,
+            getScrollTop,
+            setScrollTop,
+            categoryText,
+            lastUpdated,
+            prevBtn,
+            countrySelectElement,
+            country,
+            storeSelectElement,
+            store,
+            category,
+            searchUI,
+            overlay,
+            infoDialog
+        }) {
         this.#productsAndCategoriesContainer = productsAndCategoriesContainer;
         this.#getScrollTop = getScrollTop;
         this.#setScrollTop = setScrollTop;

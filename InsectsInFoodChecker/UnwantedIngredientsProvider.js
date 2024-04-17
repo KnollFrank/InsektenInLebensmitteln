@@ -1,7 +1,7 @@
 class UnwantedIngredientsProvider {
 
-    static getSynonyms() {
-        return [
+    static synonyms =
+        [
             new Synonym(
                 'E120',
                 [
@@ -42,5 +42,4 @@ class UnwantedIngredientsProvider {
                     new Pattern('Getreideschimmelkäfer', /Getreideschimmelkäfer/gi)
                 ])
         ];
-    }
 }

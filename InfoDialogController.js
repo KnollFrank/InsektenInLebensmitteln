@@ -1,16 +1,7 @@
 class InfoDialogController {
 
-    static configureDialog({ openButton, dialogElement, showSupportSection, showAndroidAppSection }) {
-        InfoDialogController.#configureSections({ dialogElement, showSupportSection, showAndroidAppSection });
+    static configureDialog({ openButton, dialogElement, ingredientsWithInsectsList }) {
+        ingredientsWithInsectsList.innerHTML = IngredientsWithInsectsHtmlProvider.getIngredientsWithInsectsHtml();
         openButton.addEventListener('click', () => dialogElement.showModal());
-    }
-
-    static #configureSections({ dialogElement, showSupportSection, showAndroidAppSection }) {
-        if (!showSupportSection) {
-            UIUtils.hide(dialogElement.querySelector('#Support'));
-        }
-        if (!showAndroidAppSection) {
-            UIUtils.hide(dialogElement.querySelector('#AndroidApp'));
-        }
     }
 }
