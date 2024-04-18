@@ -11,9 +11,12 @@ class IngredientsWithInsectsHtmlProvider {
     }
 
     static #getSynonymousIngredients(synonym) {
-        return synonym
-            .patterns
-            .map(pattern => pattern.name)
-            .join(', ');
+        return UIUtils
+            .createLink(
+                {
+                    href: synonym.url.href,
+                    text: synonym.patterns.map(pattern => pattern.name).join(', ')
+                })
+            .outerHTML;
     }
 }
