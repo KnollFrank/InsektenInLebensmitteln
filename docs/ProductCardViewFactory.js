@@ -19,7 +19,7 @@ class ProductCardViewFactory {
 
     static #configureLoadingOfProductImage({ product_image, image_url, loading_image }) {
         product_image.src = image_url;
-        UIUtils.show(loading_image);
-        product_image.addEventListener('load', _ => UIUtils.hide(loading_image));
+        UIUtils.setVisible(loading_image, true);
+        product_image.addEventListener('load', _ => UIUtils.setVisible(loading_image, false));
     }
 }

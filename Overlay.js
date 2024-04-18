@@ -30,10 +30,10 @@ class Overlay {
     }
 
     #openOverlay() {
-        UIUtils.show(this.#container);
+        UIUtils.setVisible(this.#container, true);
     }
 
     #closeOverlay() {
-        UIUtils.hide(this.#container);
+        UIUtils.setVisible(this.#container, false);
     }
 }

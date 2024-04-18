@@ -106,7 +106,7 @@ class OpenFoodFactsSynchronizer {
     }
 
     private List<Product> getProducts(final File productsInternationalCsvFile) throws IOException {
-        // FK-TODO: Dropdownmenu anbieten, um Produkte nach Herstellern zu filtern.
+        // FK-TODO: Dropdownmenu anbieten, um Produkte nach Herstellern (brands) zu filtern.
         final String[] headers = {"code", "product_name", "categories_tags", "countries_en", "ingredients_text", "image_url", "brands", "stores"};
         final CSVHelper csvHelper = new CSVHelper(headers);
         final Iterable<CSVRecord> records = csvHelper.readCsvRecords(productsInternationalCsvFile);

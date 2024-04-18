@@ -74,21 +74,21 @@ class InsectsInFoodCheckerActivity {
     }
 
     #hideResultBlocks() {
-        UIUtils.hide(this.#ingredientsWithInsectsBlock);
-        UIUtils.hide(this.#noIngredientsWithInsectsFoundBlock);
+        UIUtils.setVisible(this.#ingredientsWithInsectsBlock, false);
+        UIUtils.setVisible(this.#noIngredientsWithInsectsFoundBlock, false);
     }
 
     #showIngredientsWithInsects(ingredientsWithInsects) {
         this.#ingredientsWithInsects.innerText = ingredientsWithInsects;
-        UIUtils.show(this.#ingredientsWithInsectsBlock);
+        UIUtils.setVisible(this.#ingredientsWithInsectsBlock, true);
 
-        UIUtils.hide(this.#noIngredientsWithInsectsFoundBlock);
+        UIUtils.setVisible(this.#noIngredientsWithInsectsFoundBlock, false);
         this.#insects_yes();
     }
 
     #showNoIngredientsWithInsectsFoundBlock() {
-        UIUtils.hide(this.#ingredientsWithInsectsBlock);
-        UIUtils.show(this.#noIngredientsWithInsectsFoundBlock);
+        UIUtils.setVisible(this.#ingredientsWithInsectsBlock, false);
+        UIUtils.setVisible(this.#noIngredientsWithInsectsFoundBlock, true);
         this.#insects_no();
     }
 

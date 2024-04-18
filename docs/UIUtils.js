@@ -28,12 +28,8 @@ class UIUtils {
         return document.getElementById(templateId).content.firstElementChild.cloneNode(true);
     }
 
-    static show(element) {
-        element.style.display = "block";
-    }
-
-    static hide(element) {
-        element.style.display = "none";
+    static setVisible(element, visible) {
+        element.style.display = visible ? "block" : "none";
     }
 
     static asHtmlUL(elements) {

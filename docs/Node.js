@@ -21,7 +21,6 @@ class Node {
         this.#displayName = displayName;
     }
 
-    // FK-TODO: use https://immutable-js.com/ in order to return an immutable set
     getProducts() {
         return this.#products;
     }
