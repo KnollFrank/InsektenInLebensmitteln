@@ -2,10 +2,12 @@ class Synonym {
 
     name;
     patterns;
+    url;
 
-    constructor(name, patterns) {
+    constructor(name, patterns, url) {
         this.name = name;
         this.patterns = patterns;
+        this.url = url;
     }
 
     findAllMatches(haystack) {
