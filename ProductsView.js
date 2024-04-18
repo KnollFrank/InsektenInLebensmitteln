@@ -48,7 +48,7 @@ class ProductsView {
         return UIUtils.createLink(
             {
                 href: 'https://world.openfoodfacts.org/product/' + product.barcode,
-                text: product.product_name
+                text: product.product_name !== "" ? product.product_name : "(product name unknown)"
             });
     }
 }

@@ -38,8 +38,6 @@ https://play.google.com/intl/en_us/badges/
 
 FK-TODO:
 - "E 120" und "E120" zu E120 in der Android-App normalisieren. Dito "E 904" und "E904" zu "E904" normalisieren.
-- Bei einem Produkt ohne Name, einen Standardname anzeigen, der angeklickt werden kann und zur OpenFoodFacts-Seite des Produktes führt.
-  Oder das Produktbild anklickbar machen?
 - den Chatverlauf aus der Telegramgruppe https://t.me/ilblistgruppe exportieren und die darin befindlichen Produkte
   oder die in https://ilblist.com/wp-content/uploads/Insekten-Lebensmittel.pdf aufgelisteten Produkte
   in OpenFoodFacts aufnehmen bzw. mit OpenFoodFacts abgleichen.
