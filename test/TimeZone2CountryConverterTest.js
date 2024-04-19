@@ -1,7 +1,7 @@
-QUnit.module('CountryProviderTest', function () {
+QUnit.module('TimeZone2CountryConverterTest', function () {
 
     QUnit.test.each(
-        'shouldGetCountry',
+        'timeZone2Country',
         [
             ['Australia/Sydney', 'Australia'],
             ['Europe/Berlin', 'Germany'],
@@ -11,7 +11,7 @@ QUnit.module('CountryProviderTest', function () {
             // Given
 
             // When
-            const country = CountryProvider.getCountry(timeZone);
+            const country = TimeZone2CountryConverter.timeZone2Country(timeZone);
 
             // Then
             assert.equal(country, countryExpected);

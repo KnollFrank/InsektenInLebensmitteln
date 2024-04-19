@@ -1,7 +1,7 @@
-class CountryProvider {
+class TimeZone2CountryConverter {
 
-    static getCountry(timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone) {
-        return this.#countryByCity[CountryProvider.#getCity(timeZone)];
+    static timeZone2Country(timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone) {
+        return TimeZone2CountryConverter.#countryByCity[TimeZone2CountryConverter.#getCity(timeZone)];
     }
 
     static #getCity(timeZone) {
