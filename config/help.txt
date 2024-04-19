@@ -51,16 +51,16 @@ Veröffentlichung auf https://knollfrank.github.io/InsektenInLebensmitteln/
 A. GitHub Action .github/workflows/buildAndDeployWebsite.yml auf github ausführen, oder
 B.
    1. Downloading Open Food Facts Database:
-     cd /home/frank/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/Java/tmp
+     cd ~/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/Java/tmp
      wget --retry-connrefused --read-timeout=20 --timeout=15 --tries=0 --continue https://static.openfoodfacts.org/data/en.openfoodfacts.org.products.csv.gz
      gunzip en.openfoodfacts.org.products.csv.gz
    2. Running DataPreparation:
-     cd /home/frank/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/Java
+     cd ~/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/Java
      ./gradlew run \
-       --args="-openFoodFactsDatabase /home/frank/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/Java/tmp/en.openfoodfacts.org.products.csv \
-               -webAppDataDirectory /home/frank/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/data \
-               -tmpDir /home/frank/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/Java/tmp"
+       --args="-openFoodFactsDatabase ~/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/Java/tmp/en.openfoodfacts.org.products.csv \
+               -webAppDataDirectory ~/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/data \
+               -tmpDir ~/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/Java/tmp"
    3. Publishing Website:
-     cd /home/frank/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/config
-     ./publishAll.sh /home/frank/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/docs
+     cd ~/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/config
+     ./publishAll.sh ~/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/docs
    4. git push
