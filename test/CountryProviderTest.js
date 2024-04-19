@@ -4,7 +4,8 @@ QUnit.module('CountryProviderTest', function () {
         'shouldGetCountry',
         [
             ['Australia/Sydney', 'Australia'],
-            ['Europe/Berlin', 'Germany']
+            ['Europe/Berlin', 'Germany'],
+            ['dummyCountry/dummyCity', undefined]
         ],
         (assert, [timeZone, countryExpected]) => {
             // Given
