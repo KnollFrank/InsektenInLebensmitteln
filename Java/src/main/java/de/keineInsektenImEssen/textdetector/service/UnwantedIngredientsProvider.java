@@ -7,8 +7,8 @@ import de.keineInsektenImEssen.textdetector.model.Synonym;
 import java.util.List;
 import java.util.Set;
 
-import static de.keineInsektenImEssen.textdetector.service.MatcherFactory.contains;
-import static de.keineInsektenImEssen.textdetector.service.MatcherFactory.containsIgnoreCase;
+import static java.util.regex.Pattern.CASE_INSENSITIVE;
+import static java.util.regex.Pattern.compile;
 
 public class UnwantedIngredientsProvider {
 
@@ -18,38 +18,34 @@ public class UnwantedIngredientsProvider {
                     new Synonym(
                             "E120",
                             List.of(
-                                    new Pattern("E 120", contains("E 120")),
-                                    new Pattern("E120", contains("E120")),
-                                    new Pattern("Schildlaus", containsIgnoreCase("Schildlaus")),
-                                    new Pattern("Karmin", containsIgnoreCase("Karmin")))),
+                                    new Pattern("E120", compile("E\\s*120")),
+                                    new Pattern("Schildlaus", compile("Schildlaus", CASE_INSENSITIVE)),
+                                    new Pattern("Karmin", compile("Karmin", CASE_INSENSITIVE)))),
                     new Synonym(
                             "E904",
                             List.of(
-                                    new Pattern("E 904", contains("E 904")),
-                                    new Pattern("E904", contains("E904")),
-                                    new Pattern("Schellack", containsIgnoreCase("Schellack")))),
+                                    new Pattern("E904", compile("E\\s*904")),
+                                    new Pattern("Schellack", compile("Schellack", CASE_INSENSITIVE)))),
                     new Synonym(
                             "Tenebrio molitor",
                             List.of(
-                                    new Pattern("Tenebrio molitor", containsIgnoreCase("Tenebrio molitor")),
-                                    new Pattern("Mehlkäfer", containsIgnoreCase("Mehlkäfer")),
-                                    new Pattern("Mehlwurm", containsIgnoreCase("Mehlwurm")),
-                                    new Pattern("Mehlwürmer", containsIgnoreCase("Mehlwürmer")))),
+                                    new Pattern("Tenebrio molitor", compile("Tenebrio\\s+molitor", CASE_INSENSITIVE)),
+                                    new Pattern("Mehlkäfer", compile("Mehlkäfer", CASE_INSENSITIVE)),
+                                    new Pattern("Mehlwurm", compile("Mehlwurm|Mehlwürmer", CASE_INSENSITIVE)))),
                     new Synonym(
                             "Locusta migratoria",
                             List.of(
-                                    new Pattern("Locusta migratoria", containsIgnoreCase("Locusta migratoria")),
-                                    new Pattern("Wanderheuschrecke", containsIgnoreCase("Wanderheuschrecke")))),
+                                    new Pattern("Locusta migratoria", compile("Locusta\\s+migratoria", CASE_INSENSITIVE)),
+                                    new Pattern("Wanderheuschrecke", compile("Wanderheuschrecke", CASE_INSENSITIVE)))),
                     new Synonym(
                             "Acheta domesticus",
                             List.of(
-                                    new Pattern("Acheta domesticus", containsIgnoreCase("Acheta domesticus")),
-                                    new Pattern("Hausgrille", containsIgnoreCase("Hausgrille")))),
+                                    new Pattern("Acheta domesticus", compile("Acheta\\s+domesticus", CASE_INSENSITIVE)),
+                                    new Pattern("Hausgrille", compile("Hausgrille", CASE_INSENSITIVE)))),
                     new Synonym(
                             "Alphitobius diaperinus",
                             List.of(
-                                    new Pattern("Alphitobius diaperinus", containsIgnoreCase("Alphitobius diaperinus")),
-                                    new Pattern("Buffalowurm", containsIgnoreCase("Buffalowurm")),
-                                    new Pattern("Buffalowürmer", containsIgnoreCase("Buffalowürmer")),
-                                    new Pattern("Getreideschimmelkäfer", containsIgnoreCase("Getreideschimmelkäfer")))));
+                                    new Pattern("Alphitobius diaperinus", compile("Alphitobius\\s+diaperinus", CASE_INSENSITIVE)),
+                                    new Pattern("Buffalowurm", compile("Buffalowurm|Buffalowürmer", CASE_INSENSITIVE)),
+                                    new Pattern("Getreideschimmelkäfer", compile("Getreideschimmelkäfer", CASE_INSENSITIVE)))));
 }

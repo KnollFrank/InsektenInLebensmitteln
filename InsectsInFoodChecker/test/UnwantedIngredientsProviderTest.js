@@ -1,6 +1,6 @@
 QUnit.module('UnwantedIngredientsProviderTest', function () {
 
-    QUnit.test('shouldfindAllMatches', function (assert) {
+    QUnit.test('shouldFindAllMatches', function (assert) {
         // Given
         const unwantedIngredientsSynonyms = UnwantedIngredientsProvider.synonyms;
 
@@ -8,17 +8,19 @@ QUnit.module('UnwantedIngredientsProviderTest', function () {
         const matches =
             Synonyms.findAllMatches(
                 unwantedIngredientsSynonyms,
-                `E120, Schildlaus, Karmin, E904, Schellack, Tenebrio molitor,
+                `E120, E 120, Schildlaus, Karmin, E904, E  904, Schellack, Tenebrio molitor,
                  Mehlkäfer, Mehlwurm, Locusta migratoria, Wanderheuschrecke, Acheta domesticus,
-                 Hausgrille, Alphitobius diaperinus, Buffalowurm, Getreideschimmelkäfer`);
+                 Hausgrille, HausGrille, Alphitobius diaperinus, Buffalowurm, Getreideschimmelkäfer`);
 
         // Then
         assert.deepEqual(
             matches.map(match => match.pattern),
             [
                 'E120',
+                'E120',
                 'Schildlaus',
                 'Karmin',
+                'E904',
                 'E904',
                 'Schellack',
                 'Tenebrio molitor',
@@ -27,6 +29,7 @@ QUnit.module('UnwantedIngredientsProviderTest', function () {
                 'Locusta migratoria',
                 'Wanderheuschrecke',
                 'Acheta domesticus',
+                'Hausgrille',
                 'Hausgrille',
                 'Alphitobius diaperinus',
                 'Buffalowurm',

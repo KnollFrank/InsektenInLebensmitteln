@@ -2,9 +2,8 @@ package de.keineInsektenImEssen.textdetector.model;
 
 import java.util.Objects;
 import java.util.StringJoiner;
-import java.util.function.Predicate;
 
-public record Pattern(String name, Predicate<String> matcher) {
+public record Pattern(String name, java.util.regex.Pattern regexp) {
 
     @Override
     public String toString() {
