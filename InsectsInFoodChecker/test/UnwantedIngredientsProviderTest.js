@@ -1,6 +1,6 @@
 QUnit.module('UnwantedIngredientsProviderTest', function () {
 
-    QUnit.test('shouldfindAllMatches', function (assert) {
+    QUnit.test('shouldFindAllMatches', function (assert) {
         // Given
         const unwantedIngredientsSynonyms = UnwantedIngredientsProvider.synonyms;
 
