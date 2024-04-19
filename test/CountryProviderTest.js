@@ -8,7 +8,7 @@ QUnit.module('CountryProviderTest', function () {
                 {
                     urlSearchParams: new URLSearchParams("?country=Germany"),
                     timeZone: 'Australia/Sydney',
-                    defaultValue: CountryController.ALL_COUNTRIES,
+                    defaultCountry: CountryController.ALL_COUNTRIES,
                     countryExpected: 'Germany'
                 }
             ],
@@ -17,7 +17,7 @@ QUnit.module('CountryProviderTest', function () {
                 {
                     urlSearchParams: new URLSearchParams("?country=Germany"),
                     timeZone: 'Europe/Berlin',
-                    defaultValue: CountryController.ALL_COUNTRIES,
+                    defaultCountry: CountryController.ALL_COUNTRIES,
                     countryExpected: 'Germany'
                 }
             ],
@@ -26,26 +26,32 @@ QUnit.module('CountryProviderTest', function () {
                 {
                     urlSearchParams: new URLSearchParams(""),
                     timeZone: 'Europe/Berlin',
-                    defaultValue: CountryController.ALL_COUNTRIES,
+                    defaultCountry: CountryController.ALL_COUNTRIES,
                     countryExpected: 'Germany'
 
                 }
             ],
             [
-                // defaultValue wins
+                // defaultCountry wins
                 {
                     urlSearchParams: new URLSearchParams(""),
                     timeZone: 'dummyCountry/dummyCity',
-                    defaultValue: CountryController.ALL_COUNTRIES,
+                    defaultCountry: CountryController.ALL_COUNTRIES,
                     countryExpected: CountryController.ALL_COUNTRIES
                 }
             ]
         ],
-        (assert, [{ urlSearchParams, timeZone, defaultValue, countryExpected }]) => {
+        (assert, [{ urlSearchParams, timeZone, defaultCountry, countryExpected }]) => {
             // Given
 
             // When
-            const country = CountryProvider.getCountry({ urlSearchParams, timeZone, defaultValue });
+            const country = CountryProvider.getCountry(
+                {
+                    urlSearchParams,
+                    searchParam: 'country',
+                    timeZone,
+                    defaultCountry
+                });
 
             // Then
             assert.equal(country, countryExpected);

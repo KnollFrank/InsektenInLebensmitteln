@@ -52,6 +52,7 @@
     <script src="./TimeZoneProvider.js"></script>
     <script src="./TimeZone2CountryConverter.js"></script>
     <script src="./CountryProvider.js"></script>
+    <script src="./URLSearchParamsProvider.js"></script>
     <script src="./InsectsInFoodChecker/IngredientsWithInsectsHtmlProvider.js"></script>
     <script src="./InsectsInFoodChecker/Pattern.js"></script>
     <script src="./InsectsInFoodChecker/Synonym.js"></script>
@@ -61,6 +62,15 @@
             'DOMContentLoaded',
             event => {
                 const urlSearchParams = new URLSearchParams(window.location.search);
+                const { country, store, category } = URLSearchParamsProvider.getCountryStoreCategory(urlSearchParams);
+                if (!URLSearchParamsProvider.hasAllCountryStoreCategory(urlSearchParams)) {
+                    const parser = new URL(window.location);
+                    parser.searchParams.set('country', country);
+                    parser.searchParams.set('store', store);
+                    parser.searchParams.set('category', category);
+                    UrlUtils.loadPage(parser.href);
+                    return;
+                }
                 const scroller = document.querySelector('.body');
                 const productsViewActivity =
                     new ProductsViewActivity(
@@ -72,15 +82,10 @@
                             lastUpdated: document.querySelector('#lastUpdated'),
                             prevBtn: document.querySelector('#prevBtn'),
                             countrySelectElement: document.querySelector('#country'),
-                            country: CountryProvider.getCountry(
-                                {
-                                    urlSearchParams: urlSearchParams,
-                                    timeZone: TimeZoneProvider.getUserTimeZone(),
-                                    defaultValue: CountryController.ALL_COUNTRIES
-                                }),
+                            country: country,
                             storeSelectElement: document.querySelector('#store'),
-                            store: UrlUtils.getSearchParam(urlSearchParams, 'store', StoreController.ALL_STORES),
-                            category: UrlUtils.getSearchParam(urlSearchParams, 'category', 'Groceries'),
+                            store: store,
+                            category: category,
                             searchUI: {
                                 form: document.querySelector('#searchform'),
                                 input: document.querySelector('#searchInput'),

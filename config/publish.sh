@@ -40,7 +40,8 @@ cp -t $dstDir/ \
    ProductFilter.js \
    TimeZoneProvider.js \
    TimeZone2CountryConverter.js \
-   CountryProvider.js
+   CountryProvider.js \
+   URLSearchParamsProvider.js
 
 mkdir -p $dstDir/css
 cp css/style.css $dstDir/css/

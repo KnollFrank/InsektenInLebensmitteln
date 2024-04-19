@@ -1,11 +1,10 @@
 class CountryProvider {
 
-    static getCountry({ urlSearchParams, timeZone, defaultValue }) {
-        const searchParam = 'country';
+    static getCountry({ urlSearchParams, searchParam, timeZone, defaultCountry }) {
         if (urlSearchParams.has(searchParam)) {
             return urlSearchParams.get(searchParam);
         }
         const country = TimeZone2CountryConverter.timeZone2Country(timeZone);
-        return country !== undefined ? country : defaultValue;
+        return country !== undefined ? country : defaultCountry;
     }
 }
