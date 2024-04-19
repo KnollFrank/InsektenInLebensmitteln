@@ -1,24 +1,18 @@
 QUnit.module('CountryProviderTest', function () {
 
-    QUnit.test('shouldGetCountry_Germany', function (assert) {
-        // Given
-        const timeZone = 'Europe/Berlin';
+    QUnit.test.each(
+        'shouldGetCountry',
+        [
+            ['Australia/Sydney', 'Australia'],
+            ['Europe/Berlin', 'Germany']
+        ],
+        (assert, [timeZone, countryExpected]) => {
+            // Given
 
-        // When
-        const country = CountryProvider.getCountry(timeZone);
+            // When
+            const country = CountryProvider.getCountry(timeZone);
 
-        // Then
-        assert.equal(country, 'Germany');
-    });
-
-    QUnit.test('shouldGetCountry_Australia', function (assert) {
-        // Given
-        const timeZone = 'Australia/Sydney';
-
-        // When
-        const country = CountryProvider.getCountry(timeZone);
-
-        // Then
-        assert.equal(country, 'Australia');
-    });
+            // Then
+            assert.equal(country, countryExpected);
+        });
 });
