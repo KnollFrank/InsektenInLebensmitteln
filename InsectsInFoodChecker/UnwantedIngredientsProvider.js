@@ -36,7 +36,7 @@ class UnwantedIngredientsProvider {
                 'Acheta domesticus',
                 [
                     new Pattern('Acheta domesticus', /Acheta\s+domesticus/gi),
-                    new Pattern('Hausgrille', /Hausgrille/g)
+                    new Pattern('Hausgrille', /Hausgrille/gi)
                 ],
                 new URL("https://en.wikipedia.org/wiki/House_cricket")),
             new Synonym(

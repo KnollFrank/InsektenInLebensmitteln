@@ -10,7 +10,7 @@ QUnit.module('UnwantedIngredientsProviderTest', function () {
                 unwantedIngredientsSynonyms,
                 `E120, E 120, Schildlaus, Karmin, E904, E  904, Schellack, Tenebrio molitor,
                  Mehlkäfer, Mehlwurm, Locusta migratoria, Wanderheuschrecke, Acheta domesticus,
-                 Hausgrille, Alphitobius diaperinus, Buffalowurm, Getreideschimmelkäfer`);
+                 Hausgrille, HausGrille, Alphitobius diaperinus, Buffalowurm, Getreideschimmelkäfer`);
 
         // Then
         assert.deepEqual(
@@ -29,6 +29,7 @@ QUnit.module('UnwantedIngredientsProviderTest', function () {
                 'Locusta migratoria',
                 'Wanderheuschrecke',
                 'Acheta domesticus',
+                'Hausgrille',
                 'Hausgrille',
                 'Alphitobius diaperinus',
                 'Buffalowurm',
