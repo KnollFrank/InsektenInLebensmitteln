@@ -16,7 +16,7 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 class UnwantedIngredientsProviderTest {
 
     @ParameterizedTest
-    @MethodSource("haystackAndMatchesProvider")
+    @MethodSource("haystackAndMatchesExpectedProvider")
     public void shouldFindAllMatches(final String haystack, final Set<String> matchesExpected) {
         // Given
         final Set<Synonym> unwantedIngredients = UnwantedIngredientsProvider.unwantedIngredients;
@@ -28,16 +28,17 @@ class UnwantedIngredientsProviderTest {
         assertThat(matches, is(matchesExpected));
     }
 
-    private static Stream<Arguments> haystackAndMatchesProvider() {
+    private static Stream<Arguments> haystackAndMatchesExpectedProvider() {
         return Stream.of(
                 arguments(
                         """
                                 E120, Schildlaus, Karmin, E904, Schellack, Tenebrio molitor,
                                 Mehlkäfer, Mehlwurm, Locusta migratoria, Wanderheuschrecke, Acheta domesticus,
-                                Hausgrille, Alphitobius diaperinus, Buffalowurm, Getreideschimmelkäfer""",
+                                Hausgrille, Alphitobius    diaperinus, Buffalowurm, Getreideschimmelkäfer""",
                         Set.of("E120", "Schildlaus", "Karmin", "E904", "Schellack", "Tenebrio molitor",
                                 "Mehlkäfer", "Mehlwurm", "Locusta migratoria", "Wanderheuschrecke", "Acheta domesticus",
                                 "Hausgrille", "Alphitobius diaperinus", "Buffalowurm", "Getreideschimmelkäfer")),
-                arguments("E 120, E 904", Set.of("E 120", "E 904")));
+                arguments("E 120, E  904", Set.of("E120", "E904")),
+                arguments("..., Buffalowürmer, ...", Set.of("Buffalowurm")));
     }
 }

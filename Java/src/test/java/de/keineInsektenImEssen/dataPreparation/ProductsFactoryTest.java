@@ -24,7 +24,7 @@ public class ProductsFactoryTest {
 
     private static Stream<Arguments> haystackAndUnwantedIngredientsProvider() {
         return Stream.of(
-                arguments("Farbstoff [E 120]", Collections.singleton("E 120")),
+                arguments("Farbstoff [E 120]", Collections.singleton("E120")),
                 arguments("Carbohydrate 120", Collections.emptySet()));
     }
 }

@@ -9,7 +9,7 @@ public class Synonyms {
     public static Set<String> findAllMatches(final Set<Synonym> synonyms, final String haystack) {
         return Synonyms
                 .getPatterns(synonyms)
-                .filter(pattern -> pattern.matcher().test(haystack))
+                .filter(pattern -> matches(pattern, haystack))
                 .map(Pattern::name)
                 .collect(Collectors.toSet());
     }
@@ -18,5 +18,9 @@ public class Synonyms {
         return synonyms
                 .stream()
                 .flatMap(synonym -> synonym.patterns().stream());
+    }
+
+    private static boolean matches(final Pattern pattern, final String haystack) {
+        return pattern.regexp().matcher(haystack).find();
     }
 }
