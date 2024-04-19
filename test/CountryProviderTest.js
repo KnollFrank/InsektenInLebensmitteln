@@ -3,12 +3,45 @@ QUnit.module('CountryProviderTest', function () {
     QUnit.test.each(
         'getCountry',
         [
-            [new URLSearchParams("?country=Germany"), 'Australia/Sydney', CountryController.ALL_COUNTRIES, 'Germany'],
-            [new URLSearchParams("?country=Germany"), 'Europe/Berlin', CountryController.ALL_COUNTRIES, 'Germany'],
-            [new URLSearchParams(""), 'Europe/Berlin', CountryController.ALL_COUNTRIES, 'Germany'],
-            [new URLSearchParams(""), 'dummyCountry/dummyCity', CountryController.ALL_COUNTRIES, CountryController.ALL_COUNTRIES]
+            [
+                // urlSearchParams wins
+                {
+                    urlSearchParams: new URLSearchParams("?country=Germany"),
+                    timeZone: 'Australia/Sydney',
+                    defaultValue: CountryController.ALL_COUNTRIES,
+                    countryExpected: 'Germany'
+                }
+            ],
+            [
+                // urlSearchParams wins
+                {
+                    urlSearchParams: new URLSearchParams("?country=Germany"),
+                    timeZone: 'Europe/Berlin',
+                    defaultValue: CountryController.ALL_COUNTRIES,
+                    countryExpected: 'Germany'
+                }
+            ],
+            [
+                // timeZone wins
+                {
+                    urlSearchParams: new URLSearchParams(""),
+                    timeZone: 'Europe/Berlin',
+                    defaultValue: CountryController.ALL_COUNTRIES,
+                    countryExpected: 'Germany'
+
+                }
+            ],
+            [
+                // defaultValue wins
+                {
+                    urlSearchParams: new URLSearchParams(""),
+                    timeZone: 'dummyCountry/dummyCity',
+                    defaultValue: CountryController.ALL_COUNTRIES,
+                    countryExpected: CountryController.ALL_COUNTRIES
+                }
+            ]
         ],
-        (assert, [urlSearchParams, timeZone, defaultValue, countryExpected]) => {
+        (assert, [{ urlSearchParams, timeZone, defaultValue, countryExpected }]) => {
             // Given
 
             // When
