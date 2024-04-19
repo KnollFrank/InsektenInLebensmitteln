@@ -5,7 +5,7 @@ class UnwantedIngredientsProvider {
             new Synonym(
                 'E120',
                 [
-                    new Pattern('E120', /E120|E\s+120/g),
+                    new Pattern('E120', /E\s*120/g),
                     new Pattern('Schildlaus', /Schildlaus/gi),
                     new Pattern('Karmin', /Karmin/gi)
                 ],
@@ -13,7 +13,7 @@ class UnwantedIngredientsProvider {
             new Synonym(
                 'E904',
                 [
-                    new Pattern('E904', /E904|E\s+904/g),
+                    new Pattern('E904', /E\s*904/g),
                     new Pattern('Schellack', /Schellack/gi)
                 ],
                 new URL("https://en.wikipedia.org/wiki/Shellac")),
