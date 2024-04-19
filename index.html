@@ -49,6 +49,9 @@
     <script src="./StoreController.js"></script>
     <script src="./SelectController.js"></script>
     <script src="./ProductFilter.js"></script>
+    <script src="./TimeZoneProvider.js"></script>
+    <script src="./TimeZone2CountryConverter.js"></script>
+    <script src="./CountryProvider.js"></script>
     <script src="./InsectsInFoodChecker/IngredientsWithInsectsHtmlProvider.js"></script>
     <script src="./InsectsInFoodChecker/Pattern.js"></script>
     <script src="./InsectsInFoodChecker/Synonym.js"></script>
@@ -69,7 +72,12 @@
                             lastUpdated: document.querySelector('#lastUpdated'),
                             prevBtn: document.querySelector('#prevBtn'),
                             countrySelectElement: document.querySelector('#country'),
-                            country: UrlUtils.getSearchParam(urlSearchParams, 'country', CountryController.ALL_COUNTRIES),
+                            country: CountryProvider.getCountry(
+                                {
+                                    urlSearchParams: urlSearchParams,
+                                    timeZone: TimeZoneProvider.getUserTimeZone(),
+                                    defaultValue: CountryController.ALL_COUNTRIES
+                                }),
                             storeSelectElement: document.querySelector('#store'),
                             store: UrlUtils.getSearchParam(urlSearchParams, 'store', StoreController.ALL_STORES),
                             category: UrlUtils.getSearchParam(urlSearchParams, 'category', 'Groceries'),

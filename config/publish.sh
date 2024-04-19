@@ -37,7 +37,11 @@ cp -t $dstDir/ \
    CountryController.js \
    StoreController.js \
    SelectController.js \
-   ProductFilter.js
+   ProductFilter.js \
+   TimeZoneProvider.js \
+   TimeZone2CountryConverter.js \
+   CountryProvider.js
+
 mkdir -p $dstDir/css
 cp css/style.css $dstDir/css/
 

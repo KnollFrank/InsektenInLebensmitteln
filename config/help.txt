@@ -61,6 +61,6 @@ B.
                -webAppDataDirectory /home/frank/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/data \
                -tmpDir /home/frank/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/Java/tmp"
    3. Publishing Website:
-     cd /home/frank/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/config
-     ./publishAll.sh /home/frank/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/docs
+     cd ~/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/config
+     ./publishAll.sh ~/Dokumente/Insekten/projects/Keine-Insekten-im-Essen/web/InsektenInLebensmitteln/docs
    4. git push

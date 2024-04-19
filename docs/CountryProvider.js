@@ -1,6 +1,5 @@
 class CountryProvider {
 
-    // FK-TODO: rename defaultValue to defaultCountry
     static getCountry({ urlSearchParams, timeZone, defaultValue }) {
         const searchParam = 'country';
         if (urlSearchParams.has(searchParam)) {

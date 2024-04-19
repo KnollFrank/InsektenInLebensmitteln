@@ -1,5 +1,6 @@
 class TimeZone2CountryConverter {
 
+    // FK-TODO: brauchen Klasse TimeZoneProvider, mit getUserTimeZone()
     static timeZone2Country(timeZone) {
         return TimeZone2CountryConverter.#countryByCity[TimeZone2CountryConverter.#getCity(timeZone)];
     }

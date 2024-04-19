@@ -45,7 +45,7 @@ QUnit.module('CountryProviderTest', function () {
             // Given
 
             // When
-            const country = CountryProvider.getCountry(urlSearchParams, timeZone, defaultValue);
+            const country = CountryProvider.getCountry({ urlSearchParams, timeZone, defaultValue });
 
             // Then
             assert.equal(country, countryExpected);
